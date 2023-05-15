@@ -1,0 +1,11 @@
+sequenceDiagram
+    participant Switch
+    participant Server
+    participant Authentication
+
+    Switch->>Server: SNMP-трап
+    Server->>+Server: Извлечение информации из SNMP-трапа
+    Server->>+Authentication: Проверка подлинности отправителя
+    Authentication-->>-Server: Результат проверки подлинности отправителя
+    Server->>+Server: Обработка SNMP-трапа
+    Server->>+Server: Преобразование данных в формат JSON
