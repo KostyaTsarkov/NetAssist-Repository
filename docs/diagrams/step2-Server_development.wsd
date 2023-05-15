@@ -1,0 +1,63 @@
+@startuml Step2-Server_development
+class SNMPTrapHandler {
+    -community: str
+    -database: Database
+    -logger: Logger
+
+    +__init__(community: str, database: Database, logger: Logger)
+    +handle_trap(trap: dict) : None
+    -_parse_trap(trap: dict) : Tuple[SNMPVarBind, SNMPInterface]
+}
+
+class SNMPVarBind {
+    -oid: str
+    -value: str
+
+    +__init__(oid: str, value: str)
+    +to_dict() : dict
+}
+
+class SNMPInterface {
+    -if_admin_status: int
+    -if_oper_status: int
+    -if_in_errors: int
+    -if_out_errors: int
+    -if_in_discards: int
+    -if_out_discards: int
+
+    +__init__(if_admin_status: int, if_oper_status: int, if_in_errors: int, if_out_errors: int, if_in_discards: int, if_out_discards: int)
+    +to_dict() : dict
+}
+
+class Database {
+    -engine: Engine
+    -session: Session
+
+    +__init__(engine: Engine)
+    +add_interface(interface_data: dict) : None
+}
+
+class Logger {
+    -filename: str
+
+    +__init__(filename: str)
+    +log(message: str) : None
+}
+
+SNMPTrapHandler -> SNMPVarBind
+SNMPTrapHandler -> SNMPInterface
+SNMPTrapHandler -> Database
+SNMPTrapHandler -> Logger
+
+SNMPTrapHandler : +__init__(community: str, database: Database, logger: Logger)
+SNMPTrapHandler : +handle_trap(trap: dict) : None
+SNMPVarBind : +__init__(oid: str, value: str)
+SNMPVarBind : +to_dict() : dict
+SNMPInterface : +__init__(if_admin_status: int, if_oper_status: int, if_in_errors: int, if_out_errors: int, if_in_discards: int, if_out_discards: int)
+SNMPInterface : +to_dict() : dict
+Database : +__init__(engine: Engine)
+Database : +add_interface(interface_data: dict) : None
+Logger : +__init__(filename: str)
+Logger : +log(message: str) : None
+
+@enduml

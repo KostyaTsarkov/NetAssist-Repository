@@ -1,0 +1,5 @@
+Анализ данных SNMP-трапов:
+- ifAdminStatus
+- ifOperStatus
+- ifInErrors/ifOutErrors
+- ifInDiscards/ifOutDiscards
