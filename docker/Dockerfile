@@ -7,6 +7,9 @@ WORKDIR /app
 # Копируем зависимости
 COPY requirements.txt requirements.txt
 
+# Обновляем pip
+RUN python -m pip install --upgrade pip
+
 # Устанавливаем зависимости
 RUN pip install -r requirements.txt
 

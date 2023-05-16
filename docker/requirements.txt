@@ -1,4 +1,4 @@
-Flask==2.0.1
-psycopg2-binary==2.9.1
-typing-extensions==3.10.0.0
-logging==0.5.1.2
+Flask==2.3.*
+psycopg2-binary==2.9.*
+typing-extensions==3.*
+logging==0.4.*

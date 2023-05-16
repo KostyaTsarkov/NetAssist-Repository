@@ -1,8 +1,8 @@
 from typing import Tuple
-from src.database import Database
-from src.logger import Logger
-from src.snmp_var_bind import SNMPVarBind
-from src.snmp_interface import SNMPInterface
+from database import Database
+from logger import Logger
+from snmp_var_bind import SNMPVarBind
+from snmp_interface import SNMPInterface
 
 
 class SNMPTrapHandler:
@@ -32,9 +32,13 @@ class SNMPTrapHandler:
         Args:
             trap (dict): Словарь, содержащий информацию о трапе.
         """
-        varbind, interface = self._parse_trap(trap)
-        self.database.add_interface(interface.to_dict())
-        self.logger.log_info(f"Trap handled: {varbind.oid} = {varbind.value}")
+        if 'oid' in trap and 'value' in trap:
+            varbind, interface = self._parse_trap(trap)
+            print(f"Handling trap: varbind = {varbind.oid}, interface = {interface.if_admin_status}")
+            self.database.add_interface(interface.to_dict())
+            self.logger.log_info(f"Trap handled: {varbind.oid} = {varbind.value}")
+        else:
+            self.logger.warning(f"Invalid trap received: {trap}")
 
     def _parse_trap(self, trap: dict) -> Tuple[SNMPVarBind, SNMPInterface]:
         """Разбирает словарь, содержащий информацию о трапе.
@@ -57,7 +61,9 @@ class SNMPTrapHandler:
         if_in_discards = trap.get('if_in_discards')
         if_out_discards = trap.get('if_out_discards')
 
-        interface = SNMPInterface(if_admin_status, if_oper_status, if_in_errors, if_out_errors, if_in_discards, if_out_discards)
+        interface = SNMPInterface(if_admin_status, if_oper_status,
+                                  if_in_errors, if_out_errors,
+                                  if_in_discards, if_out_discards)
         interface.if_index = if_index
 
         return varbind, interface
