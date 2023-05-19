@@ -1,8 +1,7 @@
 from typing import Tuple
-from database import Database
-from logger import Logger
 from snmp_var_bind import SNMPVarBind
 from snmp_interface import SNMPInterface
+from config import config_data
 
 
 class SNMPTrapHandler:
@@ -14,7 +13,7 @@ class SNMPTrapHandler:
         logger (Logger): Объект класса Logger для логирования сообщений.
     """
 
-    def __init__(self, community: str, database: Database, logger: Logger) -> None:
+    def __init__(self, community, database, logger) -> None:
         """Инициализирует объект SNMPTrapHandler.
 
         Args:
@@ -22,9 +21,10 @@ class SNMPTrapHandler:
             database (Database): Объект класса Database для работы с базой данных.
             logger (Logger): Объект класса Logger для логирования сообщений.
         """
-        self.community = community
-        self.database = database
-        self.logger = logger
+        self.community = config_data["community"]
+        self.database = config_data["database"]
+        self.logger = config_data["logger"]
+        #self.logger.setLevel(config_data["log_level"])
 
     def handle_trap(self, trap: dict) -> None:
         """Обрабатывает SNMP-трап.

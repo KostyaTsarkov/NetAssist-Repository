@@ -1,0 +1,23 @@
+sequenceDiagram
+participant Switch
+participant Server
+participant Authentication
+participant Database #orange
+
+Switch->>Server: SNMP-трап
+Server->>+Server: Извлечение информации<br>из SNMP-трапа
+Server->>+Authentication: Проверка сообщества SNMP
+Authentication-->>-Server: Результат проверки<br>сообщества SNMP
+Server->>+Server: Проверка консистентности<br>данных SNMP-трапа
+Note over Server: Проверка консистентности данных<br>SNMP-трапа:<br>- Проверка соответствия данных<br>ожидаемым форматам и типам<br>данных
+Server->>+Server: Анализ данных SNMP-трапа
+Note over Server: Анализ данных SNMP-трапа:<br>- Извлечение информации из SNMP-трапа<br>- Принятие соответствующих мер<br>на основе полученных данных
+Server->>+Server: Анализ состояния порта<br>на коммутаторе
+Note over Server: Анализ данных SNMP-трапов:<br>- ifAdminStatus<br>- ifOperStatus<br>- ifInErrors/ifOutErrors<br>- ifInDiscards/ifOutDiscards
+
+Server->>+Switch: Включение/<br>выключение порта
+Switch-->>-Server: Подтверждение включения/<br>выключения порта
+Note over Switch: Дополнительные действия:<br>- Использование SNMP для<br>включения/выключения порта
+Server->>+Server: Преобразование данных<br>в формат JSON
+Server->>+Database: Сохранение данных<br>в базу данных
+Database-->>-Server: Подтверждение сохранения<br>данных в базу данны

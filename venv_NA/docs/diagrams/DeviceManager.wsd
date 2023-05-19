@@ -1,0 +1,43 @@
+@startuml DeviceManager
+class Device {
+    +id: int
+    +name: str
+    +ip_address: str
+    +status: bool
+    +get_status(): bool
+    +get_details(): str
+}
+
+class User {
+    +id: int
+    +name: str
+    +email: str
+    +get_devices(): List[Device]
+}
+
+class Inventory {
+    -devices: List[Device]
+    -users: List[User]
+    +add_device(device: Device)
+    +remove_device(device: Device)
+    +get_device(id: int): Device
+    +add_user(user: User)
+    +remove_user(user: User)
+    +get_user(id: int): User
+}
+
+Device "1" *-- "0..*" User
+Inventory "1" *-- "0..*" Device
+Inventory "1" *-- "0..*" User
+
+legend
+    Классы:
+    Device - Представляет устройство в системе
+    User - Представляет пользователя в системе
+    Inventory - Управляет инвентарем устройств и пользователей
+    Связи:
+    Device "1" *-- "0..*" User - Каждое устройство связано с нулем или более пользователями
+    Inventory "1" *-- "0..*" Device - Каждый инвентарь управляет одним или несколькими устройствами
+    Inventory "1" *-- "0..*" User - Каждый инвентарь управляет одним или несколькими пользователями
+endlegend
+@enduml

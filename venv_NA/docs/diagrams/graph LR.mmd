@@ -1,0 +1,44 @@
+graph LR
+    subgraph Component1
+        A[Определение устройств]
+        B[Настройка портов]
+        C[Установка ОС и ПО]
+        D[Интеграция с учетной системой]
+    end
+    subgraph Component2
+        A2[Серверы]
+        B2[Хранилище данных]
+        C2[Сеть]
+    end
+    A -->|LLDP, SNMP| B
+    B -->|SSH, Telnet, SNMP| C
+    C -->|TFTP, PXE| D
+    D -->|LDAP| B
+    D -->|DHCP, DNS, TFTP| C
+    A2 -->|Вычислительные ресурсы| B2
+    A2 -->|Сетевые ресурсы| C2
+    B2 -->|Реляционная БД| A2
+    C2 -->|Ethernet| A2
+    C2 -->|Ethernet| B2
+    subgraph Легенда
+        legend1[Компоненты системы]
+        legend2[Протоколы взаимодействия]
+    end
+    subgraph Интеграция
+        ldap[LDAP]
+        dhcp[DHCP, DNS, TFTP]
+    end
+    style legend1 fill:#f9f,stroke:#333,stroke-width:0.5px
+    style legend2 fill:#fff,stroke:#333,stroke-width:0.5px
+    direction TB
+    legend1 --> A
+    legend1 --> B
+    legend1 --> C
+    legend1 --> D
+    legend2 --> A
+    legend2 --> B
+    legend2 --> C
+    legend2 --> D
+    legend1 --> A2
+    legend1 --> B2
+    legend1 --> C2

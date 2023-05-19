@@ -1,0 +1,12 @@
+{
+    "listen_address": "0.0.0.0",
+    "community": "public",
+    "snmp_version": 2,
+    "database": "interfaces.db",
+    "logger": "app.log",
+    "log_level": "INFO",
+    "flask_host": "localhost",
+    "flask_port": 5000,
+    "snmp_host": "localhost",
+    "snmp_port": 5001
+}
