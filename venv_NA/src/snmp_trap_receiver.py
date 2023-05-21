@@ -1,44 +1,48 @@
 from pysnmp.carrier.asyncore.dispatch import AsyncoreDispatcher
 from pysnmp.carrier.asyncore.dgram import udp
 from pysnmp.smi import builder, view
-from pysnmp.entity import engine, config
 from snmp_trap_handler import SNMPTrapHandler
-import config as config_data
+from config import config_data
+from database import Database
+from logger import Logger
 
 
 class SNMPTrapReceiver:
     def __init__(self):
         self.listen_address = config_data["listen_address"]
+        self.snmp_port = config_data["snmp_port"]
         self.community = config_data["community"]
         self.snmp_version = config_data["snmp_version"]
+        self.database = Database(config_data["database"])
+        self.logger = Logger(config_data["logger"])
         self.builder = builder.MibBuilder()
         self.view_controller = view.MibViewController(self.builder)
         self.snmp_engine = None
         self.transport_dispatcher = None
 
     def start(self):
-        self.snmp_engine = engine.SnmpEngine()
-        self.transport_dispatcher = AsyncoreDispatcher()
-        transport = udp.UdpSocketTransport().openServerMode((self.listen_address, 162))
-        self.transport_dispatcher.registerTransport(udp.domainName, transport)
-        self.transport_dispatcher.jobStarted(1)
-        self.snmp_engine.registerTransportDispatcher(self.transport_dispatcher)
-
-        if self.snmp_version == 1:
-            config.addV1System(self.snmp_engine, 'my-area', self.community)
-        elif self.snmp_version == 2 or self.snmp_version == '2c':
-            config.addV2Community(self.snmp_engine, 'my-area', self.community)
-        else:
-            raise ValueError('Unsupported SNMP version')
-        config.addVacmUser(self.snmp_engine, 2, 'my-area', 'noAuthNoPriv', (), (), ())
-
-        self.snmp_engine.registerRecvCbFun(lambda *x: handler.handle_trap(*x))
-        self.snmp_engine.transportDispatcher.runDispatcher()
+        """
+        Initializes the AsyncoreDispatcher and registers 
+        the SNMPTrapHandler to handle incoming SNMP traps.
+        :return: None
+        """
+        self.dispatcher = AsyncoreDispatcher()
+        transport = udp.UdpSocketTransport().openServerMode(
+            (self.listen_address, self.snmp_port)
+        )
+        handler = SNMPTrapHandler(self.community, self.database, self.logger)
+        self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+        self.dispatcher.registerTransport(udp.domainName, transport)
+        self.dispatcher.jobStarted(1)
+        self.dispatcher.runDispatcher()
 
     def stop(self):
-        self.snmp_engine.transportDispatcher.closeDispatcher()
+        """
+        Stop the process initiated by the dispatcher.
+        :return: None
+        """
+        self.dispatcher.closeDispatcher()
 
 
-handler = SNMPTrapHandler()
 receiver = SNMPTrapReceiver()
 receiver.start()
