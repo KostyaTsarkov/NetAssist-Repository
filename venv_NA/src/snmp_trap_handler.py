@@ -63,8 +63,7 @@ class SNMPTrapHandler:
                 generic_trap=str(p_mod.apiTrapPDU.getGenericTrap(req_pdu)),
                 specific_trap=str(p_mod.apiTrapPDU.getSpecificTrap(req_pdu)),
                 time_stamp=str(p_mod.apiTrapPDU.getTimeStamp(req_pdu)),
-                var_binds=[SNMPVarBind(str(var_bind[0]), str(var_bind[1]))
-                           for var_bind in p_mod.apiTrapPDU.getVarBindList(req_pdu)]
+                var_binds=[SNMPVarBind(str(var_bind[0]), str(var_bind[1]))for var_bind in p_mod.apiTrapPDU.getVarBindList(req_pdu)]
             )
         else:
             var_binds = p_mod.apiPDU.getVarBinds(req_pdu)
@@ -96,11 +95,13 @@ class SNMPTrapHandler:
         self.logger.log_info(f'Ловушка получена: {trap_dict}')
         varbind, interface = self._parse_SNMP_trap(trap_dict)
         self.database.add_interface(interface.to_dict())
-        self.logger.log_info(f"Ловушка обработана: {varbind.oid} = {varbind.value}")
+        self.logger.log_info
+        (f"Ловушка обработана: {varbind.oid} = {varbind.value}")
         relay = SNMPTrapRelay(logger=self.logger)
         relay.relay_SNMP_trap(trap_dict)
 
-    def _parse_SNMP_trap(self, trap: dict) -> Tuple[SNMPVarBind, SNMPInterface]:
+    def _parse_SNMP_trap(self, trap: dict) -> Tuple[SNMPVarBind,
+                                                    SNMPInterface]:
         """
         Разбирает словарь, содержащий информацию о трапе.
 

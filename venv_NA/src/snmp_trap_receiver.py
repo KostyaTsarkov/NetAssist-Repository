@@ -63,7 +63,9 @@ class SNMPTrapReceiver:
             transport = udp.UdpSocketTransport().openServerMode(
                 (self.listen_address, self.snmp_port)
             )
-            handler = SNMPTrapHandler(self.community, self.database, self.logger)
+            handler = SNMPTrapHandler(self.community,
+                                      self.database,
+                                      self.logger)
             self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
             self.dispatcher.registerTransport(udp.domainName, transport)
             self.dispatcher.jobStarted(1)
@@ -78,8 +80,7 @@ class SNMPTrapReceiver:
 
         :return: None
         """
-        with self.dispatcher:
-            self.dispatcher.closeDispatcher()
+        self.dispatcher.closeDispatcher()
 
     def __del__(self):
         self.stop()

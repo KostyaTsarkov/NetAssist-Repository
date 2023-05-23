@@ -11,3 +11,653 @@
 2023-05-17 07:45:38,404 - INFO - Trap handled: None = None
 2023-05-17 07:45:44,601 - INFO - Trap handled: None = None
 2023-05-17 07:45:50,788 - INFO - Trap handled: None = None
+2023-05-23 09:33:12,487 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+;TypeError: <lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: <lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:33:12,487 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+;TypeError: <lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: <lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:37:09,761 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 51, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+;TypeError: <lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: <lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:37:09,761 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 51, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+;TypeError: <lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: <lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:39:54,433 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:39:54,433 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:40:31,694 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:40:31,694 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:42:12,692 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:42:12,692 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:44:28,491 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:44:28,491 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:45:21,555 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:45:21,555 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 88, in _cbFun
+    raise error.CarrierError(
+;pysnmp.carrier.error.CarrierError: No callback for "None" found - loosing incoming event
+caused by <class 'pysnmp.carrier.error.CarrierError'>: No callback for "None" found - loosing incoming event
+2023-05-23 09:46:20,571 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 51, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:46:20,571 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 51, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:47:16,985 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:47:16,985 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:48:19,310 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:48:19,310 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:49:47,555 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 09:49:47,555 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given

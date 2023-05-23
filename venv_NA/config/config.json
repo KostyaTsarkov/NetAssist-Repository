@@ -8,5 +8,5 @@
     "flask_host": "localhost",
     "flask_port": 5000,
     "snmp_host": "localhost",
-    "snmp_port": 162
+    "snmp_port": 5002
 }
