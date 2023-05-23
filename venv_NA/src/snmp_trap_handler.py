@@ -1,5 +1,6 @@
 from typing import Tuple
 from snmp_trap import SNMPTrap
+from dataclasses import asdict
 from snmp_var_bind import SNMPVarBind
 from snmp_interface import SNMPInterface
 from snmp_trap_relay import SNMPTrapRelay
@@ -43,8 +44,8 @@ class SNMPTrapHandler:
         self.logger.log_info(f'Notification message from {transport}:{snmp_sender}')
         req_pdu = p_mod.apiMessage.getPDU(req_message)
         if req_pdu.isSameTypeWith(p_mod.TrapPDU()):
-            trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
-            self.handle_SNMP_trap(trap_dict)
+            trap = self._process_trap(req_pdu, p_mod, snmp_type)
+            self.handle_SNMP_trap(trap)
 
     def _handle_SNMP_version(self, whole_message):
         snmp_type = int(api.decodeMessageVersion(whole_message))
@@ -57,7 +58,7 @@ class SNMPTrapHandler:
 
     def _process_trap(self, req_pdu, p_mod, snmp_type):
         if snmp_type == api.protoVersion1:
-            trap_dict = SNMPTrap(
+            trap = SNMPTrap(
                 enterprise=str(p_mod.apiTrapPDU.getEnterprise(req_pdu)),
                 agent_address=str(p_mod.apiTrapPDU.getAgentAddr(req_pdu)),
                 generic_trap=str(p_mod.apiTrapPDU.getGenericTrap(req_pdu)),
@@ -71,7 +72,7 @@ class SNMPTrapHandler:
             for oid, val in var_binds:
                 var_bind_list.append({"oid": oid.prettyPrint(),
                                       "value": val.prettyPrint()})
-            trap_dict = SNMPTrap(
+            trap = SNMPTrap(
                 enterprise='',
                 agent_address='',
                 generic_trap='',
@@ -80,54 +81,71 @@ class SNMPTrapHandler:
                 var_binds=var_bind_list
             )
 
-        return trap_dict
+        return trap
 
-    def handle_SNMP_trap(self, trap_dict: dict) -> None:
+    def handle_SNMP_trap(self, trap) -> None:
         """
         Обрабатывает SNMP-трап.
 
         Args:
             trap (dict): Словарь, содержащий информацию о трапе.
         """
+        trap_dict = asdict(trap)
         if not self._is_valid_trap(trap_dict):
             self.logger.log_warning(f'Получена невалидная ловушка: {trap_dict}')
             return
         self.logger.log_info(f'Ловушка получена: {trap_dict}')
         varbind, interface = self._parse_SNMP_trap(trap_dict)
         self.database.add_interface(interface.to_dict())
-        self.logger.log_info
-        (f"Ловушка обработана: {varbind.oid} = {varbind.value}")
+        # self.logger.log_info(f"Ловушка обработана: {varbind.oid} = {varbind.value}")
         relay = SNMPTrapRelay(logger=self.logger)
-        relay.relay_SNMP_trap(trap_dict)
+        relay.relay_SNMP_trap(varbind)
 
-    def _parse_SNMP_trap(self, trap: dict) -> Tuple[SNMPVarBind,
+    def _parse_SNMP_trap(self, trap_dict: dict) -> Tuple[SNMPVarBind,
                                                     SNMPInterface]:
         """
         Разбирает словарь, содержащий информацию о трапе.
 
         Args:
-            trap (dict): Словарь, содержащий информацию о трапе.
+            trap_dict (dict): Словарь, содержащий информацию о трапе.
 
         Returns:
             Tuple[SNMPVarBind, SNMPInterface]: Кортеж из объекта SNMPVarBind и
             объекта SNMPInterface.
         """
-        varbind_oid = trap.get('oid')
-        varbind_value = trap.get('value')
-        varbind = SNMPVarBind(varbind_oid, varbind_value)
-
-        if_index = trap.get('if_index')
-        if_admin_status = trap.get('if_admin_status')
-        if_oper_status = trap.get('if_oper_status')
-        if_in_errors = trap.get('if_in_errors')
-        if_out_errors = trap.get('if_out_errors')
-        if_in_discards = trap.get('if_in_discards')
-        if_out_discards = trap.get('if_out_discards')
+        # varbind = []
+        varbind = {}
+        for dic in trap_dict.get('var_binds'):
+            oid = dic.get('oid')
+            if '1.3.6.1.4.1.9.2.2.1.1.20.' in oid:
+                # varbind.append(dic.get('value'))
+                varbind['if_state'] = dic.get('value')
+                # varbind.append(result_dict)
+            if '1.3.6.1.2.1.2.2.1.2.' in oid:
+                # varbind.append(dic.get('value'))
+                varbind['if_name'] = dic.get('value')
+                # varbind.append(result_dict)
+            if '1.3.6.1.2.1.2.2.1.1.' in oid:
+                # varbind.append(dic.get('value'))
+                varbind['if_index'] = dic.get('value')
+                # varbind.append(result_dict)
+                
+        """ if_index = trap_dict.get('if_index')
+        if_admin_status = trap_dict.get('if_admin_status')
+        if_oper_status = trap_dict.get('if_oper_status')
+        if_in_errors = trap_dict.get('if_in_errors')
+        if_out_errors = trap_dict.get('if_out_errors')
+        if_in_discards = trap_dict.get('if_in_discards')
+        if_out_discards = trap_dict.get('if_out_discards')
 
         interface = SNMPInterface(if_admin_status, if_oper_status,
                                   if_in_errors, if_out_errors,
                                   if_in_discards, if_out_discards)
-        interface.if_index = if_index
+        interface.if_index = if_index """
+        interface = SNMPInterface(ip_address='10.30.1.105',
+                                  community=str(self.snmp_community),
+                                  if_index=int(varbind.get('if_index')),
+                                  version=2)
 
         return varbind, interface
 
@@ -141,7 +159,9 @@ class SNMPTrapHandler:
         Возвращает:
             True, если трап является валидным, False в противном случае.
         """
-        if not trap_dict.get('oid') or not trap_dict.get('value'):
-            self.logger.warning(f"Получена недопустимая ловушка: {trap_dict}")
-            return False
+        for dic in trap_dict.get('var_binds'):
+            oid = dic.get('oid')
+            value = dic.get('value')
+            if not oid or not value:
+                return False
         return True

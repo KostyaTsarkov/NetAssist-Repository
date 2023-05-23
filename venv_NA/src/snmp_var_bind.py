@@ -15,6 +15,7 @@ class SNMPVarBind:
         """
         self.oid = oid
         self.value = value
+        self.to_dict()
 
     def to_dict(self) -> dict:
         """Преобразует объект SNMPVarBind в словарь.

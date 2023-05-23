@@ -661,3 +661,1439 @@ caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 
                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 ;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
 caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 11:39:29,824 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 11:39:29,824 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 193, in poll2
+    readwrite(obj, flags)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 128, in readwrite
+    obj.handle_error()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 113, in readwrite
+    obj.handle_read_event()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+                    ^^^^^^^^^^^^^^^
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;TypeError: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: decodeMessageVersion.<locals>.<lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 11:41:33,173 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+;TypeError: <lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: <lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 11:41:33,173 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+;TypeError: <lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: <lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 11:55:02,711 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+;TypeError: <lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: <lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 11:55:02,711 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 37, in whole_SNMP_trap
+    snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 50, in _handle_SNMP_version
+    snmp_type = int(api.decodeMessageVersion(whole_message))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/proto/api/verdec.py", line 15, in decodeMessageVersion
+    seq, wholeMsg = decoder.decode(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 2003, in __call__
+    for asn1Object in streamingDecoder:
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1918, in __iter__
+    for asn1Object in self._singleItemDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 1778, in __call__
+    for value in concreteDecoder.valueDecoder(
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pyasn1/codec/ber/decoder.py", line 654, in valueDecoder
+    for chunk in substrateFun(asn1Object, substrate, length, options):
+;TypeError: <lambda>() takes 3 positional arguments but 4 were given
+caused by <class 'TypeError'>: <lambda>() takes 3 positional arguments but 4 were given
+2023-05-23 12:02:55,082 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 12:02:55,082 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 12:03:06,657 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 12:03:06,657 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 12:33:08,043 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 12:33:08,043 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 12:34:04,119 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 12:34:04,119 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 12:34:32,685 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 12:34:32,685 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 12:39:38,282 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 12:39:38,282 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 12:58:41,846 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 12:58:41,846 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 13:00:17,913 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    if not trap_dict[var_binds].get('oid') or not trap_dict[var_binds].get('value'):
+;NameError: name 'var_binds' is not defined
+caused by <class 'NameError'>: name 'var_binds' is not defined
+2023-05-23 13:00:17,913 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    if not trap_dict[var_binds].get('oid') or not trap_dict[var_binds].get('value'):
+;NameError: name 'var_binds' is not defined
+caused by <class 'NameError'>: name 'var_binds' is not defined
+2023-05-23 13:48:32,412 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 13:48:32,412 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 13:49:16,142 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 13:49:16,142 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 13:50:07,325 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    for dic in trap_dict.get('var_binds'):
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 13:50:07,325 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 92, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 144, in _is_valid_trap
+    for dic in trap_dict.get('var_binds'):
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 13:51:12,711 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 13:51:12,711 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:01:33,529 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:01:33,529 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:03:37,401 - INFO - Ловушка получена: SNMPTrap(enterprise='', agent_address='', generic_trap='', specific_trap='', time_stamp='', var_binds=[{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113233230'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}])
+2023-05-23 14:03:37,401 - INFO - Ловушка получена: SNMPTrap(enterprise='', agent_address='', generic_trap='', specific_trap='', time_stamp='', var_binds=[{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113233230'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}])
+2023-05-23 14:03:41,774 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 97, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 116, in _parse_SNMP_trap
+    varbind_oid = trap.get('oid')
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 14:03:41,774 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 97, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 116, in _parse_SNMP_trap
+    varbind_oid = trap.get('oid')
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 14:05:32,607 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:05:32,607 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:06:22,822 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 93, in handle_SNMP_trap
+    if not self._is_valid_trap(trap):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 149, in _is_valid_trap
+    if not trap_dict['var_binds'].get('oid') or not trap_dict['var_binds'].get('value'):
+;NameError: name 'var_binds' is not defined
+caused by <class 'NameError'>: name 'var_binds' is not defined
+2023-05-23 14:06:22,822 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 93, in handle_SNMP_trap
+    if not self._is_valid_trap(trap):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 149, in _is_valid_trap
+    if not trap_dict['var_binds'].get('oid') or not trap_dict['var_binds'].get('value'):
+;NameError: name 'var_binds' is not defined
+caused by <class 'NameError'>: name 'var_binds' is not defined
+2023-05-23 14:06:40,191 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:06:40,191 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:09:46,051 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:09:46,051 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:10:18,644 - INFO - Ловушка получена: SNMPTrap(enterprise='', agent_address='', generic_trap='', specific_trap='', time_stamp='', var_binds=[{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113284925'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}])
+2023-05-23 14:10:18,644 - INFO - Ловушка получена: SNMPTrap(enterprise='', agent_address='', generic_trap='', specific_trap='', time_stamp='', var_binds=[{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113284925'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}])
+2023-05-23 14:10:18,658 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 97, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 116, in _parse_SNMP_trap
+    varbind_oid = trap.get('oid')
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 14:10:18,658 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 97, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 116, in _parse_SNMP_trap
+    varbind_oid = trap.get('oid')
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 14:16:16,978 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:16:16,978 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:16:21,274 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113324052'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:16:21,274 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113324052'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:16:21,312 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10fc64af0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:16:21,312 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10fc64af0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:16:51,986 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:16:51,986 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:17:25,026 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113327480'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:17:25,026 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113327480'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:17:56,268 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10fcbb880>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:17:56,268 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10fcbb880>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:18:26,962 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:18:26,962 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:18:36,960 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113336880'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:18:36,960 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113336880'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:34:42,232 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:34:42,232 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:35:16,104 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113433975'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:35:16,104 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113433975'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:40:55,979 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:40:55,979 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:41:58,248 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113469940'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:41:58,248 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113469940'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:44:46,269 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:44:46,269 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:45:05,676 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113494993'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:45:05,676 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113494993'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:45:24,399 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106aafeb0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:45:24,399 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x106aafeb0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:45:44,457 - ERROR - Ошибка при запуске SNMPTrapReceiver: bind() for ('0.0.0.0', 5001) failed: [Errno 48] Address already in usecaused by <class 'OSError'>: [Errno 48] Address already in use
+2023-05-23 14:45:44,457 - ERROR - Ошибка при запуске SNMPTrapReceiver: bind() for ('0.0.0.0', 5001) failed: [Errno 48] Address already in usecaused by <class 'OSError'>: [Errno 48] Address already in use
+2023-05-23 14:46:08,605 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:46:08,605 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:46:09,454 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113503224'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:46:09,454 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113503224'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:46:10,062 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10eb0b910>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:46:10,062 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10eb0b910>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:46:25,869 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:46:25,869 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:46:26,964 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113504931'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:46:26,964 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113504931'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:48:34,791 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10eb5a460>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:48:34,791 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10eb5a460>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 14:55:34,901 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:55:34,901 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:55:34,907 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113560139'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:55:34,907 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113560139'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 14:55:34,927 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 14:55:34,927 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 14:57:24,088 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:57:24,088 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:57:24,088 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113571057'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:57:24,088 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113571057'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 14:57:24,095 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 14:57:24,095 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 14:58:21,969 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:58:21,969 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:58:21,970 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113576845'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.4', 'value': '4'}, {'oid': '1.3.6.1.2.1.2.2.1.2.4', 'value': 'Ethernet0/3'}, {'oid': '1.3.6.1.2.1.2.2.1.3.4', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.4', 'value': 'administratively down'}]}
+2023-05-23 14:58:21,970 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113576845'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.4', 'value': '4'}, {'oid': '1.3.6.1.2.1.2.2.1.2.4', 'value': 'Ethernet0/3'}, {'oid': '1.3.6.1.2.1.2.2.1.3.4', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.4', 'value': 'administratively down'}]}
+2023-05-23 14:58:21,976 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 14:58:21,976 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 14:59:27,344 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:59:27,344 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 14:59:27,350 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113583383'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.4', 'value': '4'}, {'oid': '1.3.6.1.2.1.2.2.1.2.4', 'value': 'Ethernet0/3'}, {'oid': '1.3.6.1.2.1.2.2.1.3.4', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.4', 'value': 'up'}]}
+2023-05-23 14:59:27,350 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113583383'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.4', 'value': '4'}, {'oid': '1.3.6.1.2.1.2.2.1.2.4', 'value': 'Ethernet0/3'}, {'oid': '1.3.6.1.2.1.2.2.1.3.4', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.4', 'value': 'up'}]}
+2023-05-23 14:59:27,356 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 14:59:27,356 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 15:10:04,488 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:10:04,488 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:10:07,038 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113646510'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 15:10:07,038 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113646510'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 15:15:40,707 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10bafa820>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 15:15:40,707 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10bafa820>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 15:16:16,740 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:16:16,740 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:16:17,710 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113683758'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 15:16:17,710 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113683758'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 15:16:54,907 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x108b03d60>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 15:16:54,907 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x108b03d60>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 15:17:25,014 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:17:25,014 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:17:25,015 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113691150'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 15:17:25,015 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113691150'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 15:17:25,038 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 15:17:25,038 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 15:29:28,614 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:29:28,614 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:29:28,621 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113763510'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 15:29:28,621 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113763510'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 15:29:28,627 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 15:29:28,627 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 15:41:02,629 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:41:02,629 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:41:02,634 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113832907'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 15:41:02,634 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113832907'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 15:41:02,656 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 15:41:02,656 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 15:59:30,308 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:59:30,308 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 15:59:34,823 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113940341'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 15:59:34,823 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113940341'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 16:08:57,987 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:08:57,987 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:09:01,312 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113998380'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 16:09:01,312 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '113998380'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 16:11:07,010 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:11:07,010 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:11:08,403 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114012823'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 16:11:08,403 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114012823'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 16:13:13,300 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:13:13,300 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:13:14,314 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114025564'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 16:13:14,314 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114025564'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 16:19:19,692 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:19:19,692 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:19:22,391 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114061881'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 16:19:22,391 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114061881'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 16:21:39,371 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:21:39,371 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:21:41,868 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114075970'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 16:21:41,868 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114075970'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 16:22:03,800 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 125, in _parse_SNMP_trap
+    varbind.append(SNMPVarBind(oid, value))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_var_bind.py", line 18, in __init__
+    self.to_dict(self)
+;TypeError: to_dict() takes 1 positional argument but 2 were given
+caused by <class 'TypeError'>: to_dict() takes 1 positional argument but 2 were given
+2023-05-23 16:22:03,800 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 125, in _parse_SNMP_trap
+    varbind.append(SNMPVarBind(oid, value))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_var_bind.py", line 18, in __init__
+    self.to_dict(self)
+;TypeError: to_dict() takes 1 positional argument but 2 were given
+caused by <class 'TypeError'>: to_dict() takes 1 positional argument but 2 were given
+2023-05-23 16:23:56,719 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:23:56,719 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:23:58,089 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114089963'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 16:23:58,089 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114089963'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 16:25:42,790 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 101, in handle_SNMP_trap
+    (f"Ловушка обработана: {varbind.oid} = {varbind.value}")
+;AttributeError: 'list' object has no attribute 'oid'
+caused by <class 'AttributeError'>: 'list' object has no attribute 'oid'
+2023-05-23 16:25:42,790 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 101, in handle_SNMP_trap
+    (f"Ловушка обработана: {varbind.oid} = {varbind.value}")
+;AttributeError: 'list' object has no attribute 'oid'
+caused by <class 'AttributeError'>: 'list' object has no attribute 'oid'
+2023-05-23 16:27:16,392 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:27:16,392 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:27:19,103 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114109411'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 16:27:19,103 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114109411'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 16:29:15,787 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:29:15,787 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:29:19,128 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114121671'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 16:29:19,128 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114121671'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 16:33:53,069 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 100, in handle_SNMP_trap
+    self.logger.log_info(f"Ловушка обработана: {varbind.oid} = {varbind.value}")
+;AttributeError: 'list' object has no attribute 'oid'
+caused by <class 'AttributeError'>: 'list' object has no attribute 'oid'
+2023-05-23 16:33:53,069 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 100, in handle_SNMP_trap
+    self.logger.log_info(f"Ловушка обработана: {varbind.oid} = {varbind.value}")
+;AttributeError: 'list' object has no attribute 'oid'
+caused by <class 'AttributeError'>: 'list' object has no attribute 'oid'
+2023-05-23 16:58:55,641 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:58:55,641 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 16:59:17,550 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114299177'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 16:59:17,550 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114299177'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 17:01:08,919 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 102, in handle_SNMP_trap
+    relay.relay_SNMP_trap(varbind.to_dict())
+;AttributeError: 'list' object has no attribute 'to_dict'
+caused by <class 'AttributeError'>: 'list' object has no attribute 'to_dict'
+2023-05-23 17:01:08,919 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 102, in handle_SNMP_trap
+    relay.relay_SNMP_trap(varbind.to_dict())
+;AttributeError: 'list' object has no attribute 'to_dict'
+caused by <class 'AttributeError'>: 'list' object has no attribute 'to_dict'
+2023-05-23 17:01:43,727 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 17:01:43,727 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 17:01:45,101 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114316682'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 17:01:45,101 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114316682'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 17:03:20,380 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10780a2e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 17:03:20,380 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10780a2e0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 17:05:37,295 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 17:05:37,295 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 17:05:37,296 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114340378'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 17:05:37,296 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114340378'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 17:05:37,318 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 17:05:37,318 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 17:05:47,973 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 17:05:47,973 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 17:05:47,974 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114341433'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 17:05:47,974 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114341433'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 17:05:47,980 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 17:05:47,980 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 17:28:27,903 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 17:28:27,903 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 17:28:27,905 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114477423'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 17:28:27,905 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114477423'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 17:28:27,923 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 17:28:27,923 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 18:19:31,447 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:19:31,447 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:19:32,831 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114783117'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:19:32,831 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114783117'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:21:25,848 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:21:25,848 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:21:27,208 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114794877'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:21:27,208 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114794877'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:31:27,954 - ERROR - Ошибка при запуске SNMPTrapReceiver: bind() for ('0.0.0.0', 5001) failed: [Errno 48] Address already in usecaused by <class 'OSError'>: [Errno 48] Address already in use
+2023-05-23 18:31:27,954 - ERROR - Ошибка при запуске SNMPTrapReceiver: bind() for ('0.0.0.0', 5001) failed: [Errno 48] Address already in usecaused by <class 'OSError'>: [Errno 48] Address already in use
+2023-05-23 18:32:29,377 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:32:29,377 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:32:30,588 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114860567'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:32:30,588 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114860567'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:32:30,599 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 117, in _parse_SNMP_trap
+    result_dict = dic()
+;UnboundLocalError: local variable 'dic' referenced before assignment
+caused by <class 'UnboundLocalError'>: local variable 'dic' referenced before assignment
+2023-05-23 18:32:30,599 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 117, in _parse_SNMP_trap
+    result_dict = dic()
+;UnboundLocalError: local variable 'dic' referenced before assignment
+caused by <class 'UnboundLocalError'>: local variable 'dic' referenced before assignment
+2023-05-23 18:33:27,202 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:33:27,202 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:33:28,833 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114866882'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:33:28,833 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114866882'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:33:28,838 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 117, in _parse_SNMP_trap
+    result_dict = dic()
+;UnboundLocalError: local variable 'dic' referenced before assignment
+caused by <class 'UnboundLocalError'>: local variable 'dic' referenced before assignment
+2023-05-23 18:33:28,838 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 117, in _parse_SNMP_trap
+    result_dict = dic()
+;UnboundLocalError: local variable 'dic' referenced before assignment
+caused by <class 'UnboundLocalError'>: local variable 'dic' referenced before assignment
+2023-05-23 18:34:14,402 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:34:14,402 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:34:18,511 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114871632'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:34:18,511 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114871632'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:34:26,116 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 117, in _parse_SNMP_trap
+    result_dict = dic()
+;UnboundLocalError: local variable 'dic' referenced before assignment
+caused by <class 'UnboundLocalError'>: local variable 'dic' referenced before assignment
+2023-05-23 18:34:26,116 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 117, in _parse_SNMP_trap
+    result_dict = dic()
+;UnboundLocalError: local variable 'dic' referenced before assignment
+caused by <class 'UnboundLocalError'>: local variable 'dic' referenced before assignment
+2023-05-23 18:34:51,959 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:34:51,959 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:34:54,405 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114875587'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:34:54,405 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114875587'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:39:21,486 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:39:21,486 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:39:24,244 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114902424'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:39:24,244 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114902424'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:42:41,488 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:42:41,488 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:42:45,697 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114921919'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:42:45,697 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114921919'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:43:59,650 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;ValueError: too many values to unpack (expected 2)
+caused by <class 'ValueError'>: too many values to unpack (expected 2)
+2023-05-23 18:43:59,650 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;ValueError: too many values to unpack (expected 2)
+caused by <class 'ValueError'>: too many values to unpack (expected 2)
+2023-05-23 18:44:56,677 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:44:56,677 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:44:57,844 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114936010'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:44:57,844 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114936010'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:48:35,755 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:48:35,755 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:48:40,561 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114958014'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:48:40,561 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114958014'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:48:44,874 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 148, in _parse_SNMP_trap
+    version=self.snmp_version)
+;AttributeError: 'SNMPTrapHandler' object has no attribute 'snmp_version'
+caused by <class 'AttributeError'>: 'SNMPTrapHandler' object has no attribute 'snmp_version'
+2023-05-23 18:48:44,874 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 148, in _parse_SNMP_trap
+    version=self.snmp_version)
+;AttributeError: 'SNMPTrapHandler' object has no attribute 'snmp_version'
+caused by <class 'AttributeError'>: 'SNMPTrapHandler' object has no attribute 'snmp_version'
+2023-05-23 18:49:36,916 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:49:36,916 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:49:39,718 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114964107'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:49:39,718 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114964107'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:50:56,178 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 148, in _parse_SNMP_trap
+    version=self.snmp_version)
+;AttributeError: 'SNMPTrapHandler' object has no attribute 'snmp_version'
+caused by <class 'AttributeError'>: 'SNMPTrapHandler' object has no attribute 'snmp_version'
+2023-05-23 18:50:56,178 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 207, in loop
+    poll_fun(timeout, map)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 188, in poll2
+    readwrite(obj, flags)
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 123, in readwrite
+    obj.handle_error()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 108, in readwrite
+    obj.handle_read_event()
+;  File "/Users/kcarkov/micromamba/lib/python3.9/asyncore.py", line 420, in handle_read_event
+    self.handle_read()
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/asyncore/dgram/base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/pysnmp/carrier/base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_receiver.py", line 69, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 48, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 98, in handle_SNMP_trap
+    varbind, interface = self._parse_SNMP_trap(trap_dict)
+;  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/src/snmp_trap_handler.py", line 148, in _parse_SNMP_trap
+    version=self.snmp_version)
+;AttributeError: 'SNMPTrapHandler' object has no attribute 'snmp_version'
+caused by <class 'AttributeError'>: 'SNMPTrapHandler' object has no attribute 'snmp_version'
+2023-05-23 18:52:08,101 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:52:08,101 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:52:11,274 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114978863'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:52:11,274 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114978863'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 18:53:37,437 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:53:37,437 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 18:53:39,712 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114988239'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 18:53:39,712 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '114988239'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 20:25:35,464 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 20:25:35,464 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 20:25:39,691 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '115539775'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 20:25:39,691 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '115539775'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'up'}]}
+2023-05-23 20:27:11,667 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110822490>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 20:27:11,667 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x110822490>: Failed to establish a new connection: [Errno 61] Connection refused'))
+2023-05-23 20:28:37,983 - ERROR - Ошибка при запуске SNMPTrapReceiver: bind() for ('0.0.0.0', 5001) failed: [Errno 48] Address already in usecaused by <class 'OSError'>: [Errno 48] Address already in use
+2023-05-23 20:28:37,983 - ERROR - Ошибка при запуске SNMPTrapReceiver: bind() for ('0.0.0.0', 5001) failed: [Errno 48] Address already in usecaused by <class 'OSError'>: [Errno 48] Address already in use
+2023-05-23 20:28:54,465 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 20:28:54,465 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 60184)
+2023-05-23 20:28:55,682 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '115559485'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 20:28:55,682 - INFO - Ловушка получена: {'enterprise': '', 'agent_address': '', 'generic_trap': '', 'specific_trap': '', 'time_stamp': '', 'var_binds': [{'oid': '1.3.6.1.2.1.1.3.0', 'value': '115559485'}, {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.3'}, {'oid': '1.3.6.1.2.1.2.2.1.1.3', 'value': '3'}, {'oid': '1.3.6.1.2.1.2.2.1.2.3', 'value': 'Ethernet0/2'}, {'oid': '1.3.6.1.2.1.2.2.1.3.3', 'value': '6'}, {'oid': '1.3.6.1.4.1.9.2.2.1.1.20.3', 'value': 'administratively down'}]}
+2023-05-23 20:29:04,442 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-23 20:29:04,442 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap

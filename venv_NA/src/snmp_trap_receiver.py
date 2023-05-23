@@ -86,6 +86,6 @@ class SNMPTrapReceiver:
         self.stop()
 
 
-receiver = SNMPTrapReceiver(config_data)
-receiver.start()
+# receiver = SNMPTrapReceiver(config_data)
+# receiver.start()
 # receiver.stop()
