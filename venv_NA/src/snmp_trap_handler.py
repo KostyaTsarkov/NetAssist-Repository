@@ -63,26 +63,15 @@ class SNMPTrapHandler:
                 generic_trap=str(p_mod.apiTrapPDU.getGenericTrap(req_pdu)),
                 specific_trap=str(p_mod.apiTrapPDU.getSpecificTrap(req_pdu)),
                 time_stamp=str(p_mod.apiTrapPDU.getTimeStamp(req_pdu)),
-                var_binds=[SNMPVarBind(str(var_bind[0]), str(var_bind[1])) for var_bind in p_mod.apiTrapPDU.getVarBindList(req_pdu)]
+                var_binds=[SNMPVarBind(str(var_bind[0]), str(var_bind[1]))
+                           for var_bind in p_mod.apiTrapPDU.getVarBindList(req_pdu)]
             )
         else:
             var_binds = p_mod.apiPDU.getVarBinds(req_pdu)
             var_bind_list = []
             for oid, val in var_binds:
-                var_bind_list.append({"oid": oid.prettyPrint(), "value": val.prettyPrint()})
-            """ var_binds = p_mod.apiPDU.getVarBinds(req_pdu)
-            trap_dict = SNMPTrap(
-                var_binds=[SNMPVarBind(oid.prettyPrint(), val.prettyPrint()) for oid, val in var_binds]
-            ) """
-            """ var_binds = p_mod.apiTrapPDU.getVarBindList(req_pdu)
-            var_bind_list = []
-            for var_bind in var_binds:
-                var_bind_list.append(
-                    {
-                        'oid': str(var_bind[0].prettyPrint()),
-                        'value': str(var_bind[1].prettyPrint()),
-                    }
-                ) """
+                var_bind_list.append({"oid": oid.prettyPrint(),
+                                      "value": val.prettyPrint()})
             trap_dict = SNMPTrap(
                 enterprise='',
                 agent_address='',
@@ -91,7 +80,7 @@ class SNMPTrapHandler:
                 time_stamp='',
                 var_binds=var_bind_list
             )
-            #trap_dict['var_binds'] = var_bind_list
+
         return trap_dict
 
     def handle_SNMP_trap(self, trap_dict: dict) -> None:
