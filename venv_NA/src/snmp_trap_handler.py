@@ -1,95 +1,117 @@
 from typing import Tuple
+from snmp_trap import SNMPTrap
 from snmp_var_bind import SNMPVarBind
 from snmp_interface import SNMPInterface
 from snmp_trap_relay import SNMPTrapRelay
 from pyasn1.codec.ber import decoder
 from pysnmp.proto import api
-import json
 
 
 class SNMPTrapHandler:
-    """Класс для обработки SNMP-трапов.
+    """
+    Класс для обработки SNMP-трапов.
 
-    Attributes:
-        community (str): Коммьюнити для доступа к SNMP-агенту.
+    Атрибуты:
+        snmp_community (str): Коммьюнити для доступа к SNMP-агенту.
         database (Database): Объект класса Database для работы с базой данных.
         logger (Logger): Объект класса Logger для логирования сообщений.
     """
 
-    def __init__(self, community, database, logger) -> None:
-        """Инициализирует объект SNMPTrapHandler.
-
-        Args:
-            community (str): Коммьюнити для доступа к SNMP-агенту.
-            database (Database): Объект класса Database для работы с базой данных.
-            logger (Logger): Объект класса Logger для логирования сообщений.
+    def __init__(self, snmp_community: str,
+                 database,
+                 logger) -> None:
         """
-        self.community = community
+        Инициализирует объект SNMPTrapHandler.
+
+        Аргументы:
+            snmp_community: Коммьюнити для доступа к SNMP-агенту.
+            database: Объект класса Database для работы с базой данных.
+            logger: Объект класса Logger для логирования сообщений.
+        """
+        self.snmp_community = snmp_community
         self.database = database
         self.logger = logger
 
-    def whole_SNMP_trap(self, dispatcher, transport, snmp_sender, whole_message):
-        """
-        Эта функция получает целое сообщение SNMP trap и декодирует его,
-        чтобы извлечь соответствующую информацию.
+    def whole_SNMP_trap(self, dispatcher, transport,
+                        snmp_sender, whole_message) -> None:
+        snmp_type, p_mod = self._handle_SNMP_version(whole_message)
+        if not p_mod:
+            return
+        req_message, whole_message = decoder.decode(
+            whole_message, asn1Spec=p_mod.Message(),
+        )
+        self.logger.log_info(f'Notification message from {transport}:{snmp_sender}')
+        req_pdu = p_mod.apiMessage.getPDU(req_message)
+        if req_pdu.isSameTypeWith(p_mod.TrapPDU()):
+            trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+            self.handle_SNMP_trap(trap_dict)
 
-        Args:
-            dispatcher: Экземпляр класса dispatcher.
-            transport: Экземпляр класса transport.
-            snmp_sender: Экземпляр класса SNMP sender.
-            whole_message: Строка, представляющая целое сообщение SNMP trap.
+    def _handle_SNMP_version(self, whole_message):
+        snmp_type = int(api.decodeMessageVersion(whole_message))
+        if snmp_type in api.protoModules:
+            p_mod = api.protoModules[snmp_type]
+        else:
+            self.logger.warning(f'Unsupported SNMP version {snmp_type}')
+            return snmp_type, None
+        return snmp_type, p_mod
 
-        Returns:
-            Строка JSON, представляющая извлеченную информацию SNMP trap.
-        """
-        trap_dict = dict()
-        while whole_message:
-            snmp_type = int(api.decodeMessageVersion(whole_message))
-            if snmp_type in api.protoModules:
-                p_mod = api.protoModules[snmp_type]
-            else:
-                print(f'Unsupported SNMP version {snmp_type}')
-                return
-            req_message, whole_message = decoder.decode(
-                whole_message, asn1Spec=p_mod.Message(),
+    def _process_trap(self, req_pdu, p_mod, snmp_type):
+        if snmp_type == api.protoVersion1:
+            trap_dict = SNMPTrap(
+                enterprise=str(p_mod.apiTrapPDU.getEnterprise(req_pdu)),
+                agent_address=str(p_mod.apiTrapPDU.getAgentAddr(req_pdu)),
+                generic_trap=str(p_mod.apiTrapPDU.getGenericTrap(req_pdu)),
+                specific_trap=str(p_mod.apiTrapPDU.getSpecificTrap(req_pdu)),
+                time_stamp=str(p_mod.apiTrapPDU.getTimeStamp(req_pdu)),
+                var_binds=[SNMPVarBind(str(var_bind[0]), str(var_bind[1])) for var_bind in p_mod.apiTrapPDU.getVarBindList(req_pdu)]
             )
-            self.logger.log_info(f'Notification message from {transport}:{snmp_sender}')
-            req_pdu = p_mod.apiMessage.getPDU(req_message)
-            if req_pdu.isSameTypeWith(p_mod.TrapPDU()):
-                if snmp_type == api.protoVersion1:
-                    self.logger.log_info(f'Enterprise: {p_mod.apiTrapPDU.getEnterprise(req_pdu).prettyPrint()}')
-                    self.logger.log_info(f'Agent Address: {p_mod.apiTrapPDU.getAgentAddr(req_pdu).prettyPrint()}')
-                    self.logger.log_info(f'Generic Trap: {p_mod.apiTrapPDU.getGenericTrap(req_pdu).prettyPrint()}')
-                    self.logger.log_info(f'Specific Trap: {p_mod.apiTrapPDU.getSpecificTrap(req_pdu).prettyPrint()}')
-                    self.logger.log_info(f'Uptime: {p_mod.apiTrapPDU.getTimeStamp(req_pdu).prettyPrint()}')
-                    var_binds = p_mod.apiTrapPDU.getVarBindList(req_pdu)
-                else:
-                    var_binds = p_mod.apiPDU.getVarBinds(req_pdu)
-                    for oid, val in var_binds:
-                        trap_dict = {"oid": oid.prettyPrint(), "value": val.prettyPrint()}
-                        #trap_json = json.dumps(trap_dict)
-                #print(trap_json)
-                #self.handle_SNMP_trap(trap_dict)
-                relay = SNMPTrapRelay()
-                relay.relay_SNMP_trap(trap_dict)
-                #return trap_json
+        else:
+            var_binds = p_mod.apiPDU.getVarBinds(req_pdu)
+            var_bind_list = []
+            for oid, val in var_binds:
+                var_bind_list.append({"oid": oid.prettyPrint(), "value": val.prettyPrint()})
+            """ var_binds = p_mod.apiPDU.getVarBinds(req_pdu)
+            trap_dict = SNMPTrap(
+                var_binds=[SNMPVarBind(oid.prettyPrint(), val.prettyPrint()) for oid, val in var_binds]
+            ) """
+            """ var_binds = p_mod.apiTrapPDU.getVarBindList(req_pdu)
+            var_bind_list = []
+            for var_bind in var_binds:
+                var_bind_list.append(
+                    {
+                        'oid': str(var_bind[0].prettyPrint()),
+                        'value': str(var_bind[1].prettyPrint()),
+                    }
+                ) """
+            trap_dict = SNMPTrap(
+                enterprise='',
+                agent_address='',
+                generic_trap='',
+                specific_trap='',
+                time_stamp='',
+                var_binds=var_bind_list
+            )
+            #trap_dict['var_binds'] = var_bind_list
+        return trap_dict
 
-    def handle_SNMP_trap(self, trap: dict) -> None:
+    def handle_SNMP_trap(self, trap_dict: dict) -> None:
         """
         Обрабатывает SNMP-трап.
 
         Args:
             trap (dict): Словарь, содержащий информацию о трапе.
         """
-        if trap.get('oid') and trap.get('value'):
-            varbind, interface = self.parse_SNMP_trap(trap)
-            print(f"Handling trap: varbind = {varbind.oid}, interface = {interface.if_admin_status}")
-            self.database.add_interface(interface.to_dict())
-            self.logger.log_info(f"Trap handled: {varbind.oid} = {varbind.value}")
-        else:
-            self.logger.warning(f"Invalid trap received: {trap}")
+        if not self._is_valid_trap(trap_dict):
+            self.logger.log_warning(f'Получена невалидная ловушка: {trap_dict}')
+            return
+        self.logger.log_info(f'Ловушка получена: {trap_dict}')
+        varbind, interface = self._parse_SNMP_trap(trap_dict)
+        self.database.add_interface(interface.to_dict())
+        self.logger.log_info(f"Ловушка обработана: {varbind.oid} = {varbind.value}")
+        relay = SNMPTrapRelay(logger=self.logger)
+        relay.relay_SNMP_trap(trap_dict)
 
-    def parse_SNMP_trap(self, trap: dict) -> Tuple[SNMPVarBind, SNMPInterface]:
+    def _parse_SNMP_trap(self, trap: dict) -> Tuple[SNMPVarBind, SNMPInterface]:
         """
         Разбирает словарь, содержащий информацию о трапе.
 
@@ -97,7 +119,8 @@ class SNMPTrapHandler:
             trap (dict): Словарь, содержащий информацию о трапе.
 
         Returns:
-            Tuple[SNMPVarBind, SNMPInterface]: Кортеж из объекта SNMPVarBind и объекта SNMPInterface.
+            Tuple[SNMPVarBind, SNMPInterface]: Кортеж из объекта SNMPVarBind и
+            объекта SNMPInterface.
         """
         varbind_oid = trap.get('oid')
         varbind_value = trap.get('value')
@@ -117,3 +140,18 @@ class SNMPTrapHandler:
         interface.if_index = if_index
 
         return varbind, interface
+
+    def _is_valid_trap(self, trap_dict: dict) -> bool:
+        """
+        Проверяет, является ли полученный трап валидным.
+
+        Аргументы:
+            trap_dict: Словарь, представляющий трап.
+
+        Возвращает:
+            True, если трап является валидным, False в противном случае.
+        """
+        if not trap_dict.get('oid') or not trap_dict.get('value'):
+            self.logger.warning(f"Получена недопустимая ловушка: {trap_dict}")
+            return False
+        return True

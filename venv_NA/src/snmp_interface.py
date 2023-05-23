@@ -10,7 +10,9 @@ class SNMPInterface:
         if_out_discards (int): Количество отброшенных пакетов исходящего трафика на интерфейсе.
     """
 
-    def __init__(self, if_admin_status: int, if_oper_status: int, if_in_errors: int, if_out_errors: int, if_in_discards: int, if_out_discards: int) -> None:
+    def __init__(self, if_admin_status: int, if_oper_status: int,
+                 if_in_errors: int, if_out_errors: int, if_in_discards:
+                     int, if_out_discards: int) -> None:
         """Инициализирует объект SNMPInterface.
 
         Args:
@@ -32,8 +34,9 @@ class SNMPInterface:
         """Преобразует объект SNMPInterface в словарь.
 
         Returns:
-            dict: Словарь с ключами 'if_admin_status', 'if_oper_status', 'if_in_errors',
-                'if_out_errors', 'if_in_discards', 'if_out_discards'.
+            dict: Словарь с ключами 'if_admin_status', 'if_oper_status',
+            'if_in_errors', 'if_out_errors', 'if_in_discards',
+            'if_out_discards'.
         """
         return {
             'if_admin_status': self.if_admin_status,

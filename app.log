@@ -96,3 +96,958 @@
 2023-05-21 11:54:04,158 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 60634)
 2023-05-21 12:17:16,721 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55849)
 2023-05-21 12:18:34,662 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 59024)
+2023-05-22 08:01:02,660 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 59007)
+2023-05-22 08:10:55,507 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 53949)
+2023-05-22 08:11:41,272 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 56092)
+2023-05-22 08:12:25,989 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57711)
+2023-05-22 08:12:41,770 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49861)
+2023-05-22 08:13:04,179 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 61975)
+2023-05-22 08:13:46,628 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 54948)
+2023-05-22 08:19:21,460 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 54258)
+2023-05-22 08:19:25,621 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49476)
+2023-05-22 08:19:30,565 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55188)
+2023-05-22 08:19:49,001 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55767)
+2023-05-22 10:09:18,155 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 51660)
+2023-05-22 10:11:25,582 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57968)
+2023-05-22 10:15:33,677 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55881)
+2023-05-22 10:16:09,999 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 53448)
+2023-05-22 10:16:14,088 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000019A736A8DD0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 10:16:36,388 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 63086)
+2023-05-22 10:16:43,120 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000226AD8D0090>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 10:16:55,121 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 51269)
+2023-05-22 10:17:14,290 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000226AEB33B90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 10:19:37,266 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55366)
+2023-05-22 10:19:37,266 - INFO - SNMP-трап успешно отправлен на http://localhost:5000/snmptrap
+2023-05-22 16:08:31,430 - ERROR - Ошибка при запуске SNMPTrapReceiver: 'SNMPTrapReceiver' object has no attribute 'listen_address'
+2023-05-22 16:10:51,608 - ERROR - Ошибка при запуске SNMPTrapReceiver: 'SNMPTrapReceiver' object has no attribute 'listen_address'
+2023-05-22 16:14:39,500 - ERROR - Ошибка при запуске SNMPTrapReceiver: 'SNMPTrapReceiver' object has no attribute 'listen_address'
+2023-05-22 17:11:48,121 - ERROR - Ошибка при запуске SNMPTrapReceiver: 'AsyncoreDispatcher' object does not support the context manager protocol
+2023-05-22 17:11:48,121 - ERROR - Ошибка при запуске SNMPTrapReceiver: 'AsyncoreDispatcher' object does not support the context manager protocol
+2023-05-22 17:12:35,618 - ERROR - Ошибка при запуске SNMPTrapReceiver: 'AsyncoreDispatcher' object does not support the context manager protocol
+2023-05-22 17:12:35,618 - ERROR - Ошибка при запуске SNMPTrapReceiver: 'AsyncoreDispatcher' object does not support the context manager protocol
+2023-05-22 17:14:49,876 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49704)
+2023-05-22 17:14:49,876 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49704)
+2023-05-22 17:14:57,844 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 86, in whole_SNMP_trap
+    self.logger.log_info(f'Enterprise: {p_mod.apiV2TrapPDU.getEnterprise(req_pdu).prettyPrint()}')
+                                        ^^^^^^^^^^^^^^^^^^
+;AttributeError: module 'pysnmp.proto.api.v2c' has no attribute 'apiV2TrapPDU'
+caused by <class 'AttributeError'>: module 'pysnmp.proto.api.v2c' has no attribute 'apiV2TrapPDU'
+2023-05-22 17:14:57,844 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 86, in whole_SNMP_trap
+    self.logger.log_info(f'Enterprise: {p_mod.apiV2TrapPDU.getEnterprise(req_pdu).prettyPrint()}')
+                                        ^^^^^^^^^^^^^^^^^^
+;AttributeError: module 'pysnmp.proto.api.v2c' has no attribute 'apiV2TrapPDU'
+caused by <class 'AttributeError'>: module 'pysnmp.proto.api.v2c' has no attribute 'apiV2TrapPDU'
+2023-05-22 17:15:44,331 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50587)
+2023-05-22 17:15:44,331 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50587)
+2023-05-22 17:17:56,669 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57564)
+2023-05-22 17:17:56,669 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57564)
+2023-05-22 17:18:09,984 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000208712F2990>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:18:09,984 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000208712F2990>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:19:30,510 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 61907)
+2023-05-22 17:19:30,510 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 61907)
+2023-05-22 17:19:42,823 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D8DA607990>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:19:42,823 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001D8DA607990>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:20:37,888 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57881)
+2023-05-22 17:20:37,888 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57881)
+2023-05-22 17:20:47,340 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028615D82C50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:20:47,340 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000028615D82C50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:21:51,918 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 64471)
+2023-05-22 17:21:51,918 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 64471)
+2023-05-22 17:21:59,664 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021D861A7610>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:21:59,664 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000021D861A7610>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:25:38,151 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 64684)
+2023-05-22 17:25:38,151 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 64684)
+2023-05-22 17:25:48,903 - INFO - Enterprise: 0.0
+2023-05-22 17:25:48,903 - INFO - Enterprise: 0.0
+2023-05-22 17:25:49,559 - INFO - Agent Address: 192.168.56.1
+2023-05-22 17:25:49,559 - INFO - Agent Address: 192.168.56.1
+2023-05-22 17:25:50,378 - INFO - Generic Trap: linkUp
+2023-05-22 17:25:50,378 - INFO - Generic Trap: linkUp
+2023-05-22 17:25:51,304 - INFO - Specific Trap: 0
+2023-05-22 17:25:51,304 - INFO - Specific Trap: 0
+2023-05-22 17:25:51,843 - INFO - Time Stamp: 0
+2023-05-22 17:25:51,843 - INFO - Time Stamp: 0
+2023-05-22 17:25:52,367 - INFO - Var-binds: VarBindList:
+
+2023-05-22 17:25:52,367 - INFO - Var-binds: VarBindList:
+
+2023-05-22 17:27:05,248 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FFB85DDF50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:27:05,248 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001FFB85DDF50>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:29:38,117 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 61624)
+2023-05-22 17:29:38,117 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 61624)
+2023-05-22 17:29:42,226 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002672BD03190>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:29:42,226 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000002672BD03190>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:31:47,771 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57387)
+2023-05-22 17:31:47,771 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57387)
+2023-05-22 17:33:28,867 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C66DA57BD0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:33:28,867 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x000001C66DA57BD0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 17:37:49,257 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49866)
+2023-05-22 17:37:49,257 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49866)
+2023-05-22 17:38:20,853 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 88, in whole_SNMP_trap
+    self.logger.log_info(f'Enterprise: {p_mod.apiV2TrapPDU.getEnterprise(req_pdu).prettyPrint()}')
+                                        ^^^^^^^^^^^^^^^^^^
+;AttributeError: module 'pysnmp.proto.api.v2c' has no attribute 'apiV2TrapPDU'
+caused by <class 'AttributeError'>: module 'pysnmp.proto.api.v2c' has no attribute 'apiV2TrapPDU'
+2023-05-22 17:38:20,853 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 88, in whole_SNMP_trap
+    self.logger.log_info(f'Enterprise: {p_mod.apiV2TrapPDU.getEnterprise(req_pdu).prettyPrint()}')
+                                        ^^^^^^^^^^^^^^^^^^
+;AttributeError: module 'pysnmp.proto.api.v2c' has no attribute 'apiV2TrapPDU'
+caused by <class 'AttributeError'>: module 'pysnmp.proto.api.v2c' has no attribute 'apiV2TrapPDU'
+2023-05-22 18:27:34,242 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57569)
+2023-05-22 18:27:34,242 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 57569)
+2023-05-22 18:27:51,720 - INFO - Ловушка получена: {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}
+2023-05-22 18:27:51,720 - INFO - Ловушка получена: {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}
+2023-05-22 18:27:51,720 - INFO - Ловушка обработана: 1.3.6.1.6.3.1.1.4.1.0 = 1.3.6.1.6.3.1.1.5.4
+2023-05-22 18:27:51,720 - INFO - Ловушка обработана: 1.3.6.1.6.3.1.1.4.1.0 = 1.3.6.1.6.3.1.1.5.4
+2023-05-22 18:27:55,803 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000208B92482D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 18:27:55,803 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000208B92482D0>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 18:28:35,378 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 59441)
+2023-05-22 18:28:35,378 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 59441)
+2023-05-22 18:29:02,106 - INFO - Ловушка получена: {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}
+2023-05-22 18:29:02,106 - INFO - Ловушка получена: {'oid': '1.3.6.1.6.3.1.1.4.1.0', 'value': '1.3.6.1.6.3.1.1.5.4'}
+2023-05-22 18:32:07,257 - INFO - Ловушка обработана: 1.3.6.1.6.3.1.1.4.1.0 = 1.3.6.1.6.3.1.1.5.4
+2023-05-22 18:32:07,257 - INFO - Ловушка обработана: 1.3.6.1.6.3.1.1.4.1.0 = 1.3.6.1.6.3.1.1.5.4
+2023-05-22 18:32:30,293 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000208B7FE3B90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 18:32:30,293 - ERROR - Ошибка отправки SNMP-трапа на http://localhost:5000/snmptrap: HTTPConnectionPool(host='localhost', port=5000): Max retries exceeded with url: /snmptrap (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000208B7FE3B90>: Failed to establish a new connection: [WinError 10061] Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение'))
+2023-05-22 18:54:27,231 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52189)
+2023-05-22 18:54:27,231 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52189)
+2023-05-22 18:54:48,644 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 70, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+2023-05-22 18:54:48,644 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 70, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+2023-05-22 18:56:23,648 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 53203)
+2023-05-22 18:56:23,648 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 53203)
+2023-05-22 18:57:31,322 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 70, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+2023-05-22 18:57:31,322 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 70, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+2023-05-22 19:02:09,830 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52492)
+2023-05-22 19:02:09,830 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52492)
+2023-05-22 19:02:39,181 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 70, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+2023-05-22 19:02:39,181 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 70, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+2023-05-22 19:05:27,526 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52530)
+2023-05-22 19:05:27,526 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52530)
+2023-05-22 19:07:26,775 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 70, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+2023-05-22 19:07:26,775 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 70, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'enterprise', 'agent_address', 'generic_trap', 'specific_trap', and 'time_stamp'
+2023-05-22 19:08:30,311 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 54108)
+2023-05-22 19:08:30,311 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 54108)
+2023-05-22 19:16:02,334 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49964)
+2023-05-22 19:16:02,334 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49964)
+2023-05-22 19:16:38,105 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 73, in _process_trap
+    var_binds = p_mod.apiTrapPDU.getVarList(req_pdu)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;AttributeError: 'TrapPDUAPI' object has no attribute 'getVarList'
+caused by <class 'AttributeError'>: 'TrapPDUAPI' object has no attribute 'getVarList'
+2023-05-22 19:16:38,105 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 73, in _process_trap
+    var_binds = p_mod.apiTrapPDU.getVarList(req_pdu)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;AttributeError: 'TrapPDUAPI' object has no attribute 'getVarList'
+caused by <class 'AttributeError'>: 'TrapPDUAPI' object has no attribute 'getVarList'
+2023-05-22 19:16:58,941 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49250)
+2023-05-22 19:16:58,941 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 49250)
+2023-05-22 19:18:12,372 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 62102)
+2023-05-22 19:18:12,372 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 62102)
+2023-05-22 19:19:26,679 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 82, in _process_trap
+    trap_dict['var_binds'] = var_bind_list
+    ^^^^^^^^^
+;UnboundLocalError: cannot access local variable 'trap_dict' where it is not associated with a value
+caused by <class 'UnboundLocalError'>: cannot access local variable 'trap_dict' where it is not associated with a value
+2023-05-22 19:19:26,679 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 82, in _process_trap
+    trap_dict['var_binds'] = var_bind_list
+    ^^^^^^^^^
+;UnboundLocalError: cannot access local variable 'trap_dict' where it is not associated with a value
+caused by <class 'UnboundLocalError'>: cannot access local variable 'trap_dict' where it is not associated with a value
+2023-05-22 19:19:39,853 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 56762)
+2023-05-22 19:19:39,853 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 56762)
+2023-05-22 19:22:35,563 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 82, in _process_trap
+    trap_dict['var_binds'] = var_bind_list
+    ^^^^^^^^^
+;UnboundLocalError: cannot access local variable 'trap_dict' where it is not associated with a value
+caused by <class 'UnboundLocalError'>: cannot access local variable 'trap_dict' where it is not associated with a value
+2023-05-22 19:22:35,563 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 82, in _process_trap
+    trap_dict['var_binds'] = var_bind_list
+    ^^^^^^^^^
+;UnboundLocalError: cannot access local variable 'trap_dict' where it is not associated with a value
+caused by <class 'UnboundLocalError'>: cannot access local variable 'trap_dict' where it is not associated with a value
+2023-05-22 19:24:57,933 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 61373)
+2023-05-22 19:24:57,933 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 61373)
+2023-05-22 19:25:40,031 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 83, in _process_trap
+    var_binds=[SNMPVarBind(oid.prettyPrint(), val.prettyPrint()) for oid, val in var_binds]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 83, in <listcomp>
+    var_binds=[SNMPVarBind(oid.prettyPrint(), val.prettyPrint()) for oid, val in var_binds]
+                           ^^^^^^^^^^^^^^^
+;AttributeError: 'str' object has no attribute 'prettyPrint'
+caused by <class 'AttributeError'>: 'str' object has no attribute 'prettyPrint'
+2023-05-22 19:25:40,031 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 83, in _process_trap
+    var_binds=[SNMPVarBind(oid.prettyPrint(), val.prettyPrint()) for oid, val in var_binds]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 83, in <listcomp>
+    var_binds=[SNMPVarBind(oid.prettyPrint(), val.prettyPrint()) for oid, val in var_binds]
+                           ^^^^^^^^^^^^^^^
+;AttributeError: 'str' object has no attribute 'prettyPrint'
+caused by <class 'AttributeError'>: 'str' object has no attribute 'prettyPrint'
+2023-05-22 19:27:25,663 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 53835)
+2023-05-22 19:27:25,663 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 53835)
+2023-05-22 19:33:57,539 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 62797)
+2023-05-22 19:33:57,539 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 62797)
+2023-05-22 19:36:31,955 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 74, in _process_trap
+    enterprise=str(p_mod.apiTrapPDU.getEnterprise(req_pdu))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;AttributeError: 'TrapPDUAPI' object has no attribute 'getEnterprise'
+caused by <class 'AttributeError'>: 'TrapPDUAPI' object has no attribute 'getEnterprise'
+2023-05-22 19:36:31,955 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 74, in _process_trap
+    enterprise=str(p_mod.apiTrapPDU.getEnterprise(req_pdu))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;AttributeError: 'TrapPDUAPI' object has no attribute 'getEnterprise'
+caused by <class 'AttributeError'>: 'TrapPDUAPI' object has no attribute 'getEnterprise'
+2023-05-22 19:36:59,283 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50111)
+2023-05-22 19:36:59,283 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50111)
+2023-05-22 19:37:35,794 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 73, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'agent_address', 'generic_trap', 'specific_trap', 'time_stamp', and 'var_binds'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'agent_address', 'generic_trap', 'specific_trap', 'time_stamp', and 'var_binds'
+2023-05-22 19:37:35,794 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 46, in whole_SNMP_trap
+    trap_dict = self._process_trap(req_pdu, p_mod, snmp_type)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 73, in _process_trap
+    trap_dict = SNMPTrap(
+                ^^^^^^^^^
+;TypeError: SNMPTrap.__init__() missing 5 required positional arguments: 'agent_address', 'generic_trap', 'specific_trap', 'time_stamp', and 'var_binds'
+caused by <class 'TypeError'>: SNMPTrap.__init__() missing 5 required positional arguments: 'agent_address', 'generic_trap', 'specific_trap', 'time_stamp', and 'var_binds'
+2023-05-22 19:37:51,613 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55720)
+2023-05-22 19:37:51,613 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55720)
+2023-05-22 19:42:51,716 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 65059)
+2023-05-22 19:42:51,716 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 65059)
+2023-05-22 19:43:34,771 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 60672)
+2023-05-22 19:43:34,771 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 60672)
+2023-05-22 19:45:30,559 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 65125)
+2023-05-22 19:45:30,559 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 65125)
+2023-05-22 19:47:39,364 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 58635)
+2023-05-22 19:47:39,364 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 58635)
+2023-05-22 19:49:25,207 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 65181)
+2023-05-22 19:49:25,207 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 65181)
+2023-05-22 19:51:41,852 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 54456)
+2023-05-22 19:51:41,852 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 54456)
+2023-05-22 19:52:38,610 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 58868)
+2023-05-22 19:52:38,610 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 58868)
+2023-05-22 19:53:10,158 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 62553)
+2023-05-22 19:53:10,158 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 62553)
+2023-05-22 19:54:47,343 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 59755)
+2023-05-22 19:54:47,343 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 59755)
+2023-05-22 19:56:32,468 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50416)
+2023-05-22 19:56:32,468 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50416)
+2023-05-22 19:56:59,767 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52221)
+2023-05-22 19:56:59,767 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52221)
+2023-05-22 19:58:01,398 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 58431)
+2023-05-22 19:58:01,398 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 58431)
+2023-05-22 20:06:07,161 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 51200)
+2023-05-22 20:06:07,161 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 51200)
+2023-05-22 20:07:53,942 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50793)
+2023-05-22 20:07:53,942 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50793)
+2023-05-22 20:09:55,568 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55878)
+2023-05-22 20:09:55,568 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55878)
+2023-05-22 20:13:45,270 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55284)
+2023-05-22 20:13:45,270 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 55284)
+2023-05-22 20:21:34,590 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 60262)
+2023-05-22 20:21:34,590 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 60262)
+2023-05-23 07:36:21,765 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50523)
+2023-05-23 07:36:21,765 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 50523)
+2023-05-23 07:43:51,541 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52549)
+2023-05-23 07:43:51,541 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('127.0.0.1', 52549)
+2023-05-23 07:50:40,334 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 104, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 154, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+           ^^^^^^^^^^^^^
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 07:50:40,334 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 104, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 154, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+           ^^^^^^^^^^^^^
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 07:51:30,315 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)
+2023-05-23 07:51:30,315 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)
+2023-05-23 07:52:58,061 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 104, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 154, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+           ^^^^^^^^^^^^^
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 07:52:58,061 - ERROR - Ошибка при запуске SNMPTrapReceiver: poll error: Traceback (most recent call last):
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dispatch.py", line 45, in runDispatcher
+    loop(timeout or self.getTimerResolution(),
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 212, in loop
+    poll_fun(timeout, map)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 155, in poll
+    read(obj)
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 92, in read
+    obj.handle_error()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 88, in read
+    obj.handle_read_event()
+;  File "C:\Program Files\Python311\Lib\asyncore.py", line 425, in handle_read_event
+    self.handle_read()
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\asyncore\dgram\base.py", line 170, in handle_read
+    self._cbFun(self, transportAddress, incomingMessage)
+;  File "c:\git_folder\NetAssist-Repository\.venv\Lib\site-packages\pysnmp\carrier\base.py", line 84, in _cbFun
+    self.__recvCallables[recvId](
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_receiver.py", line 67, in <lambda>
+    self.dispatcher.registerRecvCbFun(lambda *x: handler.whole_SNMP_trap(*x))
+                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 47, in whole_SNMP_trap
+    self.handle_SNMP_trap(trap_dict)
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 104, in handle_SNMP_trap
+    if not self._is_valid_trap(trap_dict):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+;  File "c:\git_folder\NetAssist-Repository\venv_NA\src\snmp_trap_handler.py", line 154, in _is_valid_trap
+    if not trap_dict.get('oid') or not trap_dict.get('value'):
+           ^^^^^^^^^^^^^
+;AttributeError: 'SNMPTrap' object has no attribute 'get'
+caused by <class 'AttributeError'>: 'SNMPTrap' object has no attribute 'get'
+2023-05-23 07:53:44,883 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)
+2023-05-23 07:53:44,883 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)
+2023-05-23 08:12:53,974 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)
+2023-05-23 08:12:53,974 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)
+2023-05-23 08:15:03,789 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)
+2023-05-23 08:15:03,789 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)
+2023-05-23 08:16:54,794 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)
+2023-05-23 08:16:54,794 - INFO - Notification message from (1, 3, 6, 1, 6, 1, 1):('10.30.1.105', 62206)

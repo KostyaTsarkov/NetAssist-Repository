@@ -1,5 +1,6 @@
 from flask import Flask, request
-# from snmp_trap_receiver import SNMPTrapReceiver
+import threading
+from snmp_trap_receiver import SNMPTrapReceiver
 from config import config_data
 
 
@@ -19,13 +20,12 @@ def SNMP_trap():
 
 
 if __name__ == '__main__':
-    # запуск Flask в отдельном потоке
-    import threading
-    flask_thread = threading.Thread(target=app.run, kwargs={'host': flask_host,
-                                                            'port': flask_port}
-                                    )
+    # Запуск Flask-приложения в отдельном потоке
+    flask_thread = threading.Thread(target=app.run, kwargs={'host': flask_host, 'port': flask_port})
     flask_thread.start()
 
-    # запуск слушателя SNMP-трапов в главном потоке
-    # receiver = SNMPTrapReceiver()
-    # receiver.start()
+    # Запуск слушателя SNMP-трапов в главном потоке
+    receiver = SNMPTrapReceiver(config_data)
+    receiver.start()
+    # ...
+    receiver.stop()
