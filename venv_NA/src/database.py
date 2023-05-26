@@ -1,6 +1,8 @@
 from typing import List
-
 from snmp_interface import SNMPInterface
+from logger import Logger
+
+logger = Logger('app.log')
 
 
 class Database:
@@ -28,6 +30,7 @@ class Database:
         """
         # Код для установления соединения с базой данных
         self.connected = True
+        logger.log_info('Connected to database.')
         return self.connected
 
     def disconnect(self) -> bool:
@@ -41,6 +44,7 @@ class Database:
 
         # Код для разрыва соединения с базой данных
         self.connected = False
+        logger.log_info('Disconnected from database.')
         return True
 
     def add_interface(self, interface: SNMPInterface) -> bool:
@@ -56,6 +60,7 @@ class Database:
             return False
 
         # Код для сохранения объекта класса SNMPInterface в базу данных
+        logger.log_info(f'Interface {interface} added to database.')
         return True
 
     def get_interfaces(self) -> List[SNMPInterface]:
@@ -68,4 +73,6 @@ class Database:
             return []
 
         # Код для получения списка объектов класса SNMPInterface из базы данных
-        return []
+        interfaces = []
+        logger.log_info(f'Got {len(interfaces)} interfaces from database.')
+        return interfaces

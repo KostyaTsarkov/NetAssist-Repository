@@ -7,20 +7,24 @@ class SNMPVarBind:
     """
 
     def __init__(self, oid: str, value: str) -> None:
-        """Инициализирует объект SNMPVarBind.
-
-        Args:
-            oid (str): OID переменной.
-            value (str): Значение переменной.
         """
+        Initializes a new instance of the class.
+
+        :param oid: A string indicating the object id.
+        :param value: A string indicating the value.
+
+        :return: None
+        """
+
         self.oid = oid
         self.value = value
         self.to_dict()
 
     def to_dict(self) -> dict:
-        """Преобразует объект SNMPVarBind в словарь.
+        """
+        Returns a dictionary representation of the object with the keys "oid" and "value".
 
-        Returns:
-            dict: Словарь с ключами 'oid' и 'value'.
+        :return: A dictionary with keys "oid" and "value", representing the object.
+        :rtype: dict
         """
         return {'oid': self.oid, 'value': self.value}
