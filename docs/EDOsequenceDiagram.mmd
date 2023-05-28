@@ -1,0 +1,35 @@
+graph TB
+    subgraph Бизнес-процесс менеджера отдела сбыта
+        1[Получить запрос]
+        2[Обработать запрос]
+        3[Получить дополнительную информацию]
+        4[Выполнить поиск информации]
+        5[Подготовить ответ]
+        6[Отправить ответ клиенту]
+        7[Опрос клиента о качестве обслуживания]
+        8[Создать заявку/техническое задание]
+        9[Создать сделку с клиентом]
+        10[Записать информацию в CRM]
+    end
+
+    1-->2
+    2-- Да -->3
+    2-- Нет -->4
+    3-->2
+    4-->5
+    5-->6
+    6-->7
+    7-->8
+    8-->9
+    9-->10
+
+    style 1 fill:#c7e5f7,stroke:#333,stroke-width:2px
+    style 2 fill:#f7c7c7,stroke:#333,stroke-width:2px
+    style 3 fill:#f7f7c7,stroke:#333,stroke-width:2px
+    style 4 fill:#c7f7e5,stroke:#333,stroke-width:2px
+    style 5 fill:#f7c7f7,stroke:#333,stroke-width:2px
+    style 6 fill:#c7f7f7,stroke:#333,stroke-width:2px
+    style 7 fill:#f7f7c7,stroke:#333,stroke-width:2px
+    style 8 fill:#c7f7e5,stroke:#333,stroke-width:2px
+    style 9 fill:#f7f7c7,stroke:#333,stroke-width:2px
+    style 10 fill:#f7f7f7,stroke:#333,stroke-width:2px

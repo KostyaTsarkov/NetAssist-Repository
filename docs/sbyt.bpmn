@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL"
+                  xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+                  xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                  xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                  targetNamespace="http://www.example.com/schema/bpmn">
+  <bpmn:process id="process" name="Обработка запросов клиентов">
+    <bpmn:startEvent id="start" name="Получить запрос" />
+    <bpmn:sequenceFlow id="flow1" sourceRef="start" targetRef="handle" />
+    <bpmn:task id="handle" name="Обработать запрос">
+      <bpmn:incoming>flow1</bpmn:incoming>
+      <bpmn:outgoing>flow2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:exclusiveGateway id="gateway1" name="Дополнительная информация?">
+      <bpmn:incoming>flow2</bpmn:incoming>
+      <bpmn:outgoing>flow3</bpmn:outgoing>
+      <bpmn:outgoing>flow4</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:task id="info" name="Получить дополнительную информацию">
+      <bpmn:incoming>flow3</bpmn:incoming>
+      <bpmn:outgoing>flow2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="search" name="Выполнить поиск информации">
+      <bpmn:incoming>flow4</bpmn:incoming>
+      <bpmn:outgoing>flow5</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="prepare" name="Подготовить ответ">
+      <bpmn:incoming>flow2</bpmn:incoming>
+      <bpmn:outgoing>flow6</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:sendTask id="send" name="Отправить ответ клиенту">
+      <bpmn:incoming>flow6</bpmn:incoming>
+      <bpmn:outgoing>flow7</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:task id="survey" name="Опрос клиента о качестве обслуживания">
+      <bpmn:incoming>flow7</bpmn:incoming>
+      <bpmn:outgoing>flow8</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:task id="create_request" name="Создать заявку/техническое задание">
+      <bpmn:incoming>flow8</bpmn:incoming>
+      <bpmn:outgoing>flow9</bpmn
