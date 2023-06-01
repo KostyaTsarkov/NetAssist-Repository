@@ -1,11 +1,14 @@
-import logging
+# import logging
 from easysnmp import Session
+from config import config_data
+from logger import Logger
 
-logger = logging.getLogger(__name__)
+logger = Logger('app.log')
 
 
 class SNMPInterface:
-    """Класс для представления интерфейсов SNMP.
+    """
+    Класс для представления интерфейсов SNMP.
 
     Attributes:
         if_admin_status (int): Статус административного управления интерфейсом.
@@ -42,10 +45,15 @@ class SNMPInterface:
         self.if_in_discards = None
         self.if_out_discards = None
         self.full_system_name = None
+        self.neighbor_port = None
+        self.neighbor_names = None
+
+        self.max_attempts = int(config_data["snmp_session_retries"])
+        self.session_timeout = int(config_data["snmp_session_timeout"])
 
         self.get_interface_data()
 
-    def get_session(self) -> None:
+    def _get_session(self) -> None:
         """
         Initializes and returns a session object if it has not already been created.
 
@@ -55,7 +63,7 @@ class SNMPInterface:
             self.session = Session(hostname=self.ip_address,
                                    community=self.community,
                                    version=self.version)
-            logger.info(f"Session object created for {self.ip_address}")
+            logger.log_info(f"Session object created for {self.ip_address}")
 
     def get_interface_data(self) -> None:
         """
@@ -63,7 +71,7 @@ class SNMPInterface:
         if_out_errors, if_in_discards, and if_out_discards with the retrieved data. Also, calls to_dict() to update
         the object's dictionary representation. Takes in no parameters and returns None.
         """
-        self.get_session()
+        self._get_session()
         if self.if_index is not None:
             self.if_admin_status = self._get_if_admin_status(self.if_index)
             self.if_oper_status = self._get_if_oper_status(self.if_index)
@@ -73,9 +81,13 @@ class SNMPInterface:
             self.if_in_discards = error_dict.get('in_discards')
             self.if_out_discards = error_dict.get('out_discards')
             self.full_system_name = self._get_sysname().get('sysname')
-        self.to_dict()
+            neighbor_dict = self._get_lldp_neighbors_for_interface(self.if_index)
+            self.neighbor_names = neighbor_dict.get('remote_hostname')
+            self.neighbor_port = neighbor_dict.get('remote_port')
+        self._to_dict()
+        self.session = None
 
-    def to_dict(self) -> dict:
+    def _to_dict(self) -> dict:
         """
         Return a dictionary containing the interface status information.
 
@@ -98,7 +110,9 @@ class SNMPInterface:
             'if_in_discards': self.if_in_discards,
             'if_out_discards': self.if_out_discards,
             'if_index': self.if_index,
-            'full_system_name': self.full_system_name
+            'full_system_name': self.full_system_name,
+            'neighbor_names': self.neighbor_names,
+            'neighbor_port': self.neighbor_port
         }
 
     def _get_if_admin_status(self,
@@ -119,7 +133,7 @@ class SNMPInterface:
             3: 'testing',
         }
         status = status_map.get(if_admin_status, 'unknown')
-        logger.info(f"Administrative status of interface {if_index} is {status}")
+        logger.log_info(f"Administrative status of interface {if_index} is {status}")
 
         return status
 
@@ -148,7 +162,7 @@ class SNMPInterface:
         }
 
         status = status_map.get(if_oper_status, 'unknown')
-        logger.info(f"Operational status of interface {if_index} is {status}")
+        logger.log_info(f"Operational status of interface {if_index} is {status}")
 
         return status
 
@@ -186,8 +200,8 @@ class SNMPInterface:
             status = 'ok'
         else:
             status = 'error'
-        
-        logger.info(f"Interface {if_index}: In errors: {in_errors}, Out errors: {out_errors}, In discards: {in_discards}, Out discards: {out_discards}")
+
+        logger.log_info(f"Interface {if_index}: In errors: {in_errors}, Out errors: {out_errors}, In discards: {in_discards}, Out discards: {out_discards}")
 
         return {'in_errors': in_errors,
                 'out_errors': out_errors,
@@ -202,14 +216,35 @@ class SNMPInterface:
         :return: A dictionary containing the system name.
         :rtype: dict
         """
-        sysname_oid = '.1.3.6.1.2.1.1.5.0'
-        response = self.session.get(sysname_oid)
+        oid = '.1.3.6.1.2.1.1.5.0'
+        response = self.session.get(oid)
         sysname = response.value
 
-        logger.info(f"System name: {sysname}")
+        logger.log_info(f"System name: {sysname}")
 
         return {'sysname': sysname}
 
+    def _get_lldp_neighbors_for_interface(self, if_index) -> dict:
+        """
+        Returns a dictionary containing the remote hostname and port of the LLDP neighbors for a given interface index.
 
-# interface = SNMPInterface('10.30.1.105', 'public', None, 2)
+        :param if_index: An integer representing the index of the interface to query for LLDP neighbors.
+        :type if_index: int
+        :return: A dictionary containing the remote hostname and port of the LLDP neighbors.
+        :rtype: dict
+        """
+        oids = [
+            f'1.0.8802.1.1.2.1.4.1.1.9.{if_index}',
+            f'1.0.8802.1.1.2.1.4.1.1.7.{if_index}'
+        ]
+        responses = self.session.get_next(oids)
+        remote_port = responses[1].value
+        remote_hostname = responses[0].value
+
+        return {'remote_hostname': remote_hostname,
+                'remote_port': remote_port}
+
+
+# interface = SNMPInterface('10.30.1.105', 'public', 1, 2)
 # interface.get_interface_data()
+# interface.get_lldp_neighbors_for_interface(index=1)

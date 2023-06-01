@@ -1,0 +1,11 @@
+
+host VK-1.Ethernet_0 {
+  option host-name VK-1;
+  hardware ethernet 2A:2F:0A:9F:A9:B5;
+  fixed-address 10.30.1.53;
+}
+host Phone-Ivanov.Ethernet_0 {
+  option host-name Phone-Ivanov;
+  hardware ethernet 2A:2F:2A:9F:A8:B5;
+  fixed-address 10.30.1.1;
+}

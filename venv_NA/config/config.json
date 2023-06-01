@@ -3,12 +3,16 @@
     "community": "public",
     "snmp_version": 2,
     "database": "interfaces.db",
+    "dhcp_file": "dhcp.db",
     "logger": "app.log",
     "log_level": "INFO",
-    "flask_host": "localhost",
-    "flask_port": 5000,
+    "flask_host": "0.0.0.0",
+    "flask_port": 8080,
     "snmp_host": "localhost",
     "snmp_port": 5001,
     "session_post_timeout": 10,
-    "num_threads": 5
+    "num_threads": 5,
+    "snmp_session_timeout": 3,
+    "snmp_session_retries": 3,
+    "cache_size": 1000
 }

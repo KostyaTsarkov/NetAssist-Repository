@@ -11,7 +11,7 @@ class SNMPTrapRelay:
     Класс для пересылки SNMP-трапов на сервер Flask.
     """
 
-    def __init__(self, logger) -> None:
+    def __init__(self) -> None:
         """
         Initializes an instance of the class with a logger and configuration data.
 

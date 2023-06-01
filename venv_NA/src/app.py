@@ -1,9 +1,14 @@
-from flask import Flask, request
 import threading
-from snmp_trap_receiver import SNMPTrapReceiver
+
+from flask import Flask, request
+
 from config import config_data
+from nb_ipam_api import manage_ip
+from snmp_trap_receiver import SNMPTrapReceiver
+from common import mng_cable, mng_int
 
 
+# Create a Flask instance
 app = Flask(__name__)
 
 # адрес и порт Flask-приложения
@@ -12,17 +17,25 @@ flask_port = config_data["flask_port"]
 num_threads = config_data["num_threads"]
 
 
-@app.route('/snmptrap', methods=['POST'])
+@app.route('/snmptrap',
+           methods=['POST'])
 def SNMP_trap():
-    """
-    Defines a Flask route that receives SNMP traps via an HTTP POST request.
-    :return: A string message indicating the successful processing of the SNMP trap.
-    """
     trap_dict = request.get_json()
     print(trap_dict)
-    # Возвращаем сообщение об успешной обработке SNMP-трапа
     return "SNMP Trap received and processed successfully"
 
+
+app.add_url_rule("/api/fixed_ip",
+                 methods=["POST"],
+                 view_func=manage_ip)
+
+app.add_url_rule("/api/cable_change",
+                 methods=['POST'],
+                 view_func=mng_cable)
+
+app.add_url_rule("/api/int_update",
+                 methods=['POST'],
+                 view_func=mng_int)
 
 if __name__ == '__main__':
     # Запуск Flask-приложения в отдельном потоке

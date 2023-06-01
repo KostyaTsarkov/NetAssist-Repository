@@ -5,6 +5,7 @@ from snmp_trap import SNMPTrap
 from dataclasses import asdict
 from snmp_var_bind import SNMPVarBind
 from snmp_interface import SNMPInterface
+from snmp_mactable import SNMPMACTable
 from snmp_trap_relay import SNMPTrapRelay
 from pyasn1.codec.ber import decoder
 from pysnmp.proto import api
@@ -227,17 +228,18 @@ class SNMPTrapHandler:
             self.logger.log_warning(f'Received a non-invalid trap: {trap_dict}')
             return
         self.logger.log_info(f'Trap received: {trap_dict}')
-        varbind, interface = self._parse_SNMP_trap(trap_dict, ip_address)
-        varbind['ip_address'] = ip_address
+        varbind, interface, mac_addresses = self._parse_SNMP_trap(trap_dict, ip_address)
+        varbind['netdevice_ip_address'] = ip_address
         varbind['trap_date'] = trap_date_str
         self.database.add_interface(interface)
-        relay = SNMPTrapRelay(logger=self.logger)
+        relay = SNMPTrapRelay()
         relay.relay_SNMP_trap(varbind)
 
     def _parse_SNMP_trap(self,
                          trap_dict: dict,
                          ip_address: str) -> Tuple[SNMPVarBind,
-                                                   SNMPInterface]:
+                                                   SNMPInterface,
+                                                   SNMPMACTable]:
         """
         Parses an SNMP trap dictionary and returns a tuple containing the varbind and SNMPInterface objects.
 
@@ -245,23 +247,23 @@ class SNMPTrapHandler:
         :type trap_dict: dict
         :param ip_address: The IP address of the interface.
         :type ip_address: str
-        :return: A tuple containing the SNMPVarBind and SNMPInterface objects.
-        :rtype: Tuple[SNMPVarBind, SNMPInterface]
+        :return: A tuple containing the SNMPVarBind, SNMPInterface and SNMPMACTable objects.
+        :rtype: Tuple[SNMPVarBind, SNMPInterface, SNMPMACTable]
         """
-        IF_STATE_OID = '1.3.6.1.4.1.9.2.2.1.1.20.'
-        IF_NAME_OID = '1.3.6.1.2.1.2.2.1.2.'
-        IF_INDEX_OID = '1.3.6.1.2.1.2.2.1.1.'
+        cisco_if_mib_if_admin_status_oid = '1.3.6.1.4.1.9.2.2.1.1.20.'
+        if_mib_if_desc_oid = '1.3.6.1.2.1.2.2.1.2.'
+        if_mib_if_index_oid = '1.3.6.1.2.1.2.2.1.1.'
 
         varbind = {}
         if_index = None
 
         for dic in trap_dict.get('var_binds'):
             oid = dic.get('oid')
-            if IF_STATE_OID in oid:
+            if cisco_if_mib_if_admin_status_oid in oid:
                 varbind['if_state'] = dic.get('value')
-            if IF_NAME_OID in oid:
+            if if_mib_if_desc_oid in oid:
                 varbind['if_name'] = dic.get('value')
-            if IF_INDEX_OID in oid:
+            if if_mib_if_index_oid in oid:
                 if_index = int(dic.get('value'))
                 varbind['if_index'] = if_index
 
@@ -270,7 +272,13 @@ class SNMPTrapHandler:
                                   if_index=varbind.get('if_index'),
                                   version=int(config_data['snmp_version']))
 
-        return varbind, interface
+        self.snmp_mac_addresses = SNMPMACTable(ip_address=ip_address,
+                                               community=str(self.snmp_community),
+                                               if_index=varbind.get('if_index'),
+                                               version=int(config_data['snmp_version']))
+        mac_addresses = self.snmp_mac_addresses.get_mac_addresses()
+
+        return varbind, interface, mac_addresses
 
     def _is_valid_trap(self,
                        trap_dict: dict) -> bool:
