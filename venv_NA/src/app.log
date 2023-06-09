@@ -146,3 +146,16 @@
 2023-05-29 18:08:18,992 - INFO - Session object created for 10.30.1.105
 2023-05-30 15:44:45,083 - INFO - Configuration loaded successfully.
 2023-05-30 17:34:54,023 - INFO - Configuration loaded successfully.
+2023-06-09 16:42:32,398 - ERROR - Failed to resolve 10.1.1.300: '10.1.1.300' does not appear to be an IPv4 or IPv6 address
+2023-06-09 16:42:32,407 - ERROR - Failed to resolve 10.1.1.300: [Errno 8] nodename nor servname provided, or not known
+2023-06-09 16:42:32,412 - INFO - 192.168.0.1 is a valid IP address
+2023-06-09 16:42:32,414 - ERROR - Failed to resolve google.com: 'google.com' does not appear to be an IPv4 or IPv6 address
+2023-06-09 16:42:32,509 - INFO - google.com resolved to 108.177.14.113
+2023-06-09 16:42:32,511 - ERROR - Failed to resolve invalid_ip: 'invalid_ip' does not appear to be an IPv4 or IPv6 address
+2023-06-09 16:42:32,611 - ERROR - Failed to resolve invalid_ip: [Errno 8] nodename nor servname provided, or not known
+2023-06-09 16:42:32,672 - ERROR - Failed to resolve invalid_domain: 'invalid_domain' does not appear to be an IPv4 or IPv6 address
+2023-06-09 16:42:32,705 - ERROR - Failed to resolve invalid_domain: [Errno 8] nodename nor servname provided, or not known
+2023-06-09 16:42:32,712 - ERROR - Failed to resolve google.com: 'google.com' does not appear to be an IPv4 or IPv6 address
+2023-06-09 16:42:32,713 - INFO - google.com resolved to 216.58.194.174
+2023-06-09 16:42:32,714 - ERROR - Failed to resolve google.com: 'google.com' does not appear to be an IPv4 or IPv6 address
+2023-06-09 16:42:32,715 - ERROR - Failed to resolve google.com: Error

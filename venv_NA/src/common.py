@@ -12,6 +12,8 @@ from nornir_napalm.plugins.tasks import napalm_get
 from nornir_netmiko.tasks import netmiko_send_config
 from nb_device_mng_address import DeviceManagementAddress
 from logger import Logger
+from ipaddress_or_dns import resolver
+import traceback
 
 logger = Logger('app.log')
 
@@ -30,18 +32,20 @@ def compare(prechange, postchange):
     compare = DeepDiff(prechange,
                        postchange,
                        exclude_paths="root['last_updated']")
+    change = {}
     change_key = []
     new_value = []
 
     for key in compare.keys():
-        if key in ('values_changed', 'type_changes'):
-            [change_key.add(re.findall("'([^']*)'", inkey)[0]) for inkey in compare[key].keys()]
-            new_value += [compare[key][inkey]['new_value'] for inkey in compare[key].keys()]
+        if key == 'values_changed' or key == 'type_changes':
+            for inkey in compare[key].keys():
+                change_key.append(re.findall("'([^']*)'", inkey)[0])
+                new_value.append(compare[key][inkey]['new_value'])
+    change = dict(zip(change_key, new_value))
+    if len(change) == 0:
+        change = None
 
-    if new_value:
-        return dict(zip(change_key, new_value))
-    else:
-        return None
+    return change
 
 
 def convert_none_to_str(value: str or None) -> str:
@@ -75,10 +79,10 @@ def fill_template(*args: Any, **kwargs: str) -> Optional[str]:
     parent_path = pathlib.Path(__file__).parent.parent
     templates_path = parent_path / 'templates/'
     environment = Environment(loader=FileSystemLoader(templates_path))
-    template = environment.get_template('template_file')
+    template = environment.get_template(kwargs['template_file'])
     content = None
     event = kwargs['event']
-    interface = args[0]
+    interface = kwargs['interface']
 
     try:
         if event == 'shutdown':
@@ -157,26 +161,38 @@ def push_interface_config(netbox_interface,
         addrs = []
         filter_query = DeviceManagementAddress().get_address(netbox_interface)
         addrs.append(filter_query)
+        timeout = config_context.timeout
+        retry = int(config_context.retry)
+        ignore_lookup_errors = eval(config_context.ignore_lookup_errors)
 
         responses, no_responses = multi_ping(addrs,
-                                             timeout=config_context.timeout,
-                                             retry=config_context.retry,
-                                             ignore_lookup_errors=config_context.ignore_lookup_errors)
+                                             timeout,
+                                             retry,
+                                             ignore_lookup_errors
+                                             )
         logger.log_info("icmp ping.")
 
-        if filter_query in list(responses.keys()):
+        # if filter_query in list(responses.keys()):
+        if resolver.resolve(filter_query):
             logger.log_info(f'{addrs} is available.')
             nr = nornir_session
             if nr is None:
                 logger.log_error('Could not connect to device.')
-                logger.log_warning(f'{no_responses}')
+                # logger.log_warning(f'{no_responses}')
             else:
                 with nr:
-                    with nr.filter(hostname=filter_query) as sw:
+                    filtered_nr = nr.filter(hostname=filter_query)
+                    if len(filtered_nr.inventory.hosts) == 0:
+                        logger.log_error('Could not filtered.')
+                        filtered_nr = nr.filter(hostname=device_name)
+                    #with nr.filter(hostname=filter_query) as sw:
+                    with filtered_nr as sw:
                         sw.inventory.hosts[device_name].username = config_context.device_username
                         sw.inventory.hosts[device_name].password = config_context.device_password
-                        get_int = sw.run(task=napalm_get, getters=['get_interfaces'])
+                        sw.inventory.hosts[device_name].hostname = resolver.resolve(filter_query)
+                        # get_int = sw.run(task=napalm_get, getters=['get_interfaces'])
                         for _ in range(attempts):
+                            get_int = sw.run(task=napalm_get, getters=['get_interfaces'])
                             logger.log_info(f'Attempting to connect {(_ + 1)}.')
                             if get_int.failed is True:
                                 fail_count += 1
@@ -224,7 +240,7 @@ def change_config_intf(netbox_interface,
     try:
         content = get_cisco_interface_config(netbox_interface, event)
         if content is not None:
-            content = '\n'.join(content)
+            # content = '\n'.join(content)
             push_interface_config(netbox_interface,
                                   content,
                                   event,
@@ -233,6 +249,7 @@ def change_config_intf(netbox_interface,
         else:
             logger.log_info("No data returned from cisco_config_interface()")
     except Exception:
+        logger.log_error(traceback.format_exc())
         logger.log_info(f'No data for {event.lower()} {netbox_interface.name}')
 
 
@@ -281,6 +298,7 @@ def manage_connected_interfaces(intf: Dict[str, Any],
                     new_value.append(value[1])
         changes = dict(zip(change_key, new_value))
         return [changes]
+
     if role in user_device_roles and event != 'delete':
         if intf['connected_endpoints_reachable']:
             network_device_id = intf['connected_endpoints'][0]['id']
@@ -336,6 +354,8 @@ def mng_cable() -> Response:
         if request.json:
             cable_data = request.json['data']
             event_type = request.json["event"]
+            pre_change_snapshot = request.json['snapshots']['prechange']
+            post_change_snapshot = request.json['snapshots']['postchange']
             for cable_key in cable_data.keys():
                 if re.match(TERMINATIONS_REGEX, cable_key) and len(cable_data[cable_key]) == 1:
                     for i in range(len(cable_data[cable_key])):
@@ -359,7 +379,7 @@ def mng_cable() -> Response:
             roles.extend(config_context.user_devices_roles)
             for device in devices:
                 device_roles.append(device['role'])
-            logger.log_info(f"{event_type.upper()} cable ID #{cable_data['id']} between {device_names}.")  # type: ignore
+            logger.log_info('{} cable ID #{} between {}.'.format(event_type.upper(), cable_data['id'], device_names))  # type: ignore
             if set(device_roles).issubset(set(roles)):
                 for device in devices:
                     if device['role'] == roles[0]:
@@ -371,27 +391,27 @@ def mng_cable() -> Response:
                     get_device_interface.mode.value if get_device_interface.mode else None)  # type: ignore
                 global_id = get_device_interface.device.id  # type: ignore
                 config_context = SimpleNamespace(**dict(netbox_api.dcim.devices.get(global_id).config_context))  # type: ignore
-                logger.log_info(f"Connection between {device_roles[0]} and {device_roles[1]}, switch access interface ID: {device_intf_id}.")
+                logger.log_info(f'Connection between {device_roles[0]} and {device_roles[1]}, switch access interface ID: {device_intf_id}.')
                 if get_device_interface.mgmt_only:  # type: ignore
-                    comment = '{} is management interface, no changes will be performed'.format(interface_name)
+                    comment = f'{interface_name} is management interface, no changes will be performed'
                     logger.log_info(comment)
                 elif interface_mode_802_1Q in ['tagged', 'tagged-all']:
-                    logger.log_info('Interface {} is mode {}'.format(interface_name, interface_mode_802_1Q))
+                    logger.log_info(f'Interface {interface_name} is mode {interface_mode_802_1Q}')
                 else:
                     if event_type == "created" and get_device_interface is not None:
                         manage_connected_interfaces(get_device_interface, event='create', role=roles[0], config_context=config_context)
                     elif event_type == "deleted" and get_device_interface is not None:
                         manage_connected_interfaces(get_device_interface, event='delete', role=roles[0], config_context=config_context)
-                    elif get_device_interface.enabled == False: # type: ignore
-                        print('Interface {} was turned off before'.format(interface_name))
+                    elif get_device_interface.enabled == False:  # type: ignore
+                        logger.log_info('Interface {interface_name} was turned off before')
                         pass
                     elif event_type == "updated" and compare(pre_change_snapshot, post_change_snapshot) is not None:
                         change_config_intf(netbox_interface=get_device_interface, event='update', config_context=config_context)
                     else:
-                        comment = 'No data for {} {}'.format(event_type.lower(), interface_name)
+                        comment = f'No data for {event_type.lower()} {interface_name}'
                         logger.log_info(comment)
             else:
-                comment = 'Devices must match the list of {}'.format(roles)
+                comment = f'Devices must match the list of {roles}'
                 logger.log_info(comment)
     except ValueError as ve:
         logger.log_error(f"ValueError occurred: {ve}")

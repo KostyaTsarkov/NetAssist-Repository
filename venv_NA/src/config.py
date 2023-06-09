@@ -65,9 +65,9 @@ class Configuration:
             "options": {
                 "nb_url": netbox_url,
                 "nb_token": netbox_token,
-                "flatten_custom_fields": True,
+              #  "flatten_custom_fields": True,
                 "include_vms": True,
-                "config_context": True,
+              #  "config_context": True,
                 "group_file": self.group_file,
                 "defaults_file": self.defaults_file,
                 # "group_file": "./inventory/groups.yml",

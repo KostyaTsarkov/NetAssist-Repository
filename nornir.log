@@ -1,0 +1,295 @@
+2023-06-07 19:10:35,136 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-06-07 19:10:36,327 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-07 19:19:37,097 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-07 19:19:37,173 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/paramiko/client.py", line 377, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/paramiko/client.py", line 202, in _families_and_addresses
+    addrinfos = socket.getaddrinfo(
+  File "/Users/kcarkov/micromamba/lib/python3.9/socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios SW-PLGN-1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to SW-PLGN-1
+
+2023-06-07 19:41:10,801 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-06-07 19:41:11,452 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-07 19:49:13,934 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-06-07 19:49:13,935 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-09 16:14:06,597 -  nornir.core -  WARNING -        run() - Task 'close_connections_task' has not been run – 0 hosts selected
+2023-06-09 16:14:06,610 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-09 17:36:27,559 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-09 17:39:45,380 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 17:39:45,415 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/paramiko/client.py", line 377, in connect
+    to_try = list(self._families_and_addresses(hostname, port))
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/paramiko/client.py", line 202, in _families_and_addresses
+    addrinfos = socket.getaddrinfo(
+  File "/Users/kcarkov/micromamba/lib/python3.9/socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios SW-PLGN-1:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to SW-PLGN-1
+
+2023-06-09 18:39:29,662 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 18:39:29,699 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.105
+
+2023-06-09 18:46:30,396 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 18:46:30,429 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.105
+
+2023-06-09 18:48:22,778 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 18:48:22,782 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-06-09 18:48:22,785 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-09 18:50:44,388 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 18:50:44,425 - nornir.core.task -    ERROR -      start() - Host 'SW-PLGN-1': task 'napalm_get' failed with traceback:
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1046, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/paramiko/client.py", line 409, in connect
+    raise NoValidConnectionsError(errors)
+paramiko.ssh_exception.NoValidConnectionsError: [Errno None] Unable to connect to port 22 on 10.30.1.105
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 114, in _netmiko_open
+    self._netmiko_device = ConnectHandler(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/ssh_dispatcher.py", line 365, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 439, in __init__
+    self._open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 444, in _open
+    self.establish_connection()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/netmiko/base_connection.py", line 1068, in establish_connection
+    raise NetmikoTimeoutException(msg)
+netmiko.exceptions.NetmikoTimeoutException: TCP connection to device failed.
+
+Common causes of this problem are:
+1. Incorrect hostname or IP address.
+2. Wrong TCP port.
+3. Intermediate firewall blocking access.
+
+Device settings: cisco_ios 10.30.1.105:22
+
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/task.py", line 99, in start
+    r = self.task(self, **self.params)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/tasks/napalm_get.py", line 32, in napalm_get
+    device = task.host.get_connection(CONNECTION_NAME, task.nornir.config)
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 494, in get_connection
+    self.open_connection(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir/core/inventory.py", line 546, in open_connection
+    conn_obj.open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/nornir_napalm/plugins/connections/__init__.py", line 57, in open
+    connection.open()
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/ios/ios.py", line 172, in open
+    self.device = self._netmiko_open(
+  File "/Users/kcarkov/github/NetAssist-Repository/venv_NA/lib/python3.9/site-packages/napalm/base/base.py", line 123, in _netmiko_open
+    raise ConnectionException("Cannot connect to {}".format(self.hostname))
+napalm.base.exceptions.ConnectionException: Cannot connect to 10.30.1.105
+
+2023-06-09 18:51:45,033 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 18:52:46,975 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-06-09 18:52:46,978 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-09 18:54:28,893 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 18:54:28,901 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-06-09 18:54:28,904 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-09 18:55:30,778 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 19:02:59,848 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-06-09 19:02:59,859 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-09 19:03:38,756 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 19:03:57,164 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-06-09 19:03:57,167 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
+2023-06-09 19:07:36,306 -  nornir.core -     INFO -        run() - Running task 'napalm_get' with args {'getters': ['get_interfaces']} on 1 hosts
+2023-06-09 19:07:47,243 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 1 hosts
+2023-06-09 19:07:47,246 -  nornir.core -     INFO -        run() - Running task 'close_connections_task' with args {} on 81 hosts
