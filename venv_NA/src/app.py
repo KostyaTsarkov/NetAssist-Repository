@@ -5,7 +5,7 @@ from flask import Flask, request
 from config import config_data
 from nb_ipam_api import manage_ip
 from snmp_trap_receiver import SNMPTrapReceiver
-from common import mng_cable, mng_int
+from nb_mng_int_cable import mng_cable, mng_int
 
 
 # Create a Flask instance
